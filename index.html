@@ -395,17 +395,17 @@
       <div class="stats">
 
         <div class="stat-card">
-          <div class="stat-number">3</div>
+          <div class="stat-number" id="streamCount">—</div>
           <div class="stat-label">收錄歌回</div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-number">27</div>
+          <div class="stat-number" id="performanceCount">—</div>
           <div class="stat-label">演唱紀錄</div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-number">27</div>
+          <div class="stat-number" id="uniqueSongCount">—</div>
           <div class="stat-label">不重複歌曲</div>
         </div>
 
@@ -451,60 +451,7 @@
         <p>近期收錄歌回</p>
       </div>
 
-      <div class="latest-grid">
-
-        <a
-          class="stream-card"
-          href="https://www.youtube.com/watch?v=0Y07GpGMNdM"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://img.youtube.com/vi/0Y07GpGMNdM/hqdefault.jpg"
-            alt="月色下的伴睡歌回"
-          >
-
-          <div class="stream-info">
-            <div class="stream-date">2026／09／25</div>
-            <h3 class="stream-title">月色下的伴睡歌回🌕💤</h3>
-          </div>
-        </a>
-
-        <a
-          class="stream-card"
-          href="https://www.youtube.com/watch?v=-sI3KgHtQF4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://img.youtube.com/vi/-sI3KgHtQF4/hqdefault.jpg"
-            alt="動漫歌回"
-          >
-
-          <div class="stream-info">
-            <div class="stream-date">2026／09／18</div>
-            <h3 class="stream-title">🔥動漫歌回🔥</h3>
-          </div>
-        </a>
-
-        <a
-          class="stream-card"
-          href="https://www.youtube.com/watch?v=tIOPmv3lb2E"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://img.youtube.com/vi/tIOPmv3lb2E/hqdefault.jpg"
-            alt="抓住夏日的尾巴"
-          >
-
-          <div class="stream-info">
-            <div class="stream-date">2026／09／13</div>
-            <h3 class="stream-title">抓住夏日的尾巴🍹</h3>
-          </div>
-        </a>
-
-      </div>
+      <div class="latest-grid" id="latestStreams"></div>
 
       <div class="stream-more">
         <a class="button secondary" href="streams.html">
@@ -556,6 +503,71 @@
   <footer>
     VTuber Archive · SETSUNA Unofficial Fan Project
   </footer>
+
+
+  <script src="data.js"></script>
+  <script>
+    const data = window.SETSUNA_DATA || { streams: [], songs: [] };
+    const streams = Array.isArray(data.streams) ? data.streams : [];
+    const songs = Array.isArray(data.songs) ? data.songs : [];
+
+    // 自動統計
+    document.getElementById("streamCount").textContent = streams.length;
+    document.getElementById("performanceCount").textContent = songs.length;
+
+    const uniqueSongCount = new Set(
+      songs.map(item =>
+        `${String(item.song || "").trim().toLowerCase()}|${String(item.original || "").trim().toLowerCase()}`
+      )
+    ).size;
+
+    document.getElementById("uniqueSongCount").textContent = uniqueSongCount;
+
+    // 日期顯示：2026-10-09 → 2026／10／09
+    function formatDate(dateString) {
+      return String(dateString || "").replaceAll("-", "／");
+    }
+
+    // 自動抓最新 3 場歌回
+    const latestStreams = [...streams]
+      .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+      .slice(0, 3);
+
+    const latestContainer = document.getElementById("latestStreams");
+
+    if (latestStreams.length === 0) {
+      latestContainer.innerHTML = '<div class="empty">目前尚無歌回資料</div>';
+    } else {
+      latestStreams.forEach(stream => {
+        const card = document.createElement("a");
+        card.className = "stream-card";
+        card.href = `https://www.youtube.com/watch?v=${stream.videoId}`;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+
+        const img = document.createElement("img");
+        img.src = `https://img.youtube.com/vi/${stream.videoId}/hqdefault.jpg`;
+        img.alt = stream.shortTitle || "歌回縮圖";
+
+        const info = document.createElement("div");
+        info.className = "stream-info";
+
+        const date = document.createElement("div");
+        date.className = "stream-date";
+        date.textContent = formatDate(stream.date);
+
+        const title = document.createElement("h3");
+        title.className = "stream-title";
+        title.textContent = stream.shortTitle || stream.fullTitle || "未命名歌回";
+
+        info.appendChild(date);
+        info.appendChild(title);
+        card.appendChild(img);
+        card.appendChild(info);
+        latestContainer.appendChild(card);
+      });
+    }
+  </script>
 
 </body>
 </html>
