@@ -1,4 +1,4 @@
-window.SETSUNA_DATA = {
+  window.SETSUNA_DATA = {
   streams: [
     {
       id: "20261009",
@@ -41,8 +41,15 @@ window.SETSUNA_DATA = {
       shortTitle: "抓住夏日的尾巴🍹",
       fullTitle: "〖 粿粿唱 〗最近開始變涼了⛅一起來抓住夏日的尾巴🍹｜降落歡迎｜初見歡迎｜",
       videoId: "tIOPmv3lb2E"
+    },
+    {
+      id: "20260828",
+      date: "2026-08-28",
+      shortTitle: "彈唱樂手最愛的樂譜網站『91譜』大更新✨",
+      fullTitle: "〖 粿歌雜 〗彈唱樂手最愛的樂譜網站『91譜』大更新✨來狂唱91譜有的歌💖",
+      videoId: "UAOzFv8SSag"
     }
-  ],
+    ],
 
   songs: [
 
@@ -572,7 +579,116 @@ window.SETSUNA_DATA = {
       parts: [
         { time: "01:33:28" }
       ]
+    },
+
+    // =========================
+    // 2026-08-28
+    // =========================
+
+    {
+      song: "我懷念的",
+      original: "孫燕姿",
+      streamId: "20260828",
+      parts: [
+        { time: "00:17:37" }
+      ]
+    },
+    {
+      song: "雨愛",
+      original: "楊丞琳",
+      streamId: "20260828",
+      parts: [
+        { time: "00:27:07" }
+      ]
+    },
+    {
+      song: "晴天",
+      original: "周杰倫",
+      streamId: "20260828",
+      parts: [
+        { time: "00:34:45" }
+      ]
+    },
+    {
+      song: "捲菸",
+      original: "美秀集團",
+      streamId: "20260828",
+      parts: [
+        { time: "00:44:58" }
+      ]
+    },
+    {
+      song: "小幸運",
+      original: "田馥甄",
+      streamId: "20260828",
+      parts: [
+        { time: "00:53:34" }
+      ]
+    },
+    {
+      song: "一個人想著一個人",
+      original: "曾沛慈",
+      streamId: "20260828",
+      parts: [
+        { time: "01:03:10" }
+      ]
+    },
+    {
+      song: "聽見下雨的聲音",
+      original: "魏如昀",
+      streamId: "20260828",
+      parts: [
+        { time: "01:13:57" }
+      ]
+    },
+    {
+      song: "安靜",
+      original: "周杰倫",
+      streamId: "20260828",
+      parts: [
+        { time: "01:24:50" }
+      ]
+    },
+    {
+      song: "你要的愛",
+      original: "戴佩妮",
+      streamId: "20260828",
+      parts: [
+        { time: "01:34:57" }
+      ]
+    },
+    {
+      song: "最長的電影",
+      original: "周杰倫",
+      streamId: "20260828",
+      parts: [
+        { time: "01:43:39" }
+      ]
+    },
+    {
+      song: "填空",
+      original: "家家",
+      streamId: "20260828",
+      parts: [
+        { time: "01:53:11" }
+      ]
+    },
+    {
+      song: "100種生活",
+      original: "盧廣仲",
+      streamId: "20260828",
+      parts: [
+        { time: "02:05:36" }
+      ]
+    },
+    {
+      song: "還是會寂寞",
+      original: "陳綺貞",
+      streamId: "20260828",
+      parts: [
+        { time: "02:16:22" }
+      ]
     }
 
-  ]
+  ]  
 };
