@@ -332,6 +332,12 @@
       .section-title p {
         margin-top: 8px;
       }
+
+      .music-preview-original {
+        margin-top: 8px;
+        color: #9298a5;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -414,7 +420,7 @@
 
     </section>
 
-    <!-- MUSIC -->
+   <!-- MUSIC -->
 <section class="section" id="music">
 
   <div class="section-title">
@@ -422,24 +428,15 @@
     <p>正式音樂作品</p>
   </div>
 
-  <div class="music-grid">
+  <div
+    class="latest-grid"
+    id="latestMusic"
+  ></div>
 
-    <a class="music-box" href="music.html">
-      <h3>Original Songs</h3>
-
-      <p id="homeOriginalSummary">
-        正在讀取作品資料...
-      </p>
+  <div class="stream-more">
+    <a class="button secondary" href="music.html">
+      查看全部 MUSIC
     </a>
-
-    <a class="music-box" href="music.html">
-      <h3>Covers</h3>
-
-      <p id="homeCoverSummary">
-        正在讀取作品資料...
-      </p>
-    </a>
-
   </div>
 
 </section>
@@ -573,67 +570,119 @@
     }
 
     // =========================
-    // HOME MUSIC
-    // =========================
+// HOME MUSIC
+// =========================
 
-    const musicData = Array.isArray(window.SETSUNA_MUSIC)
-      ? window.SETSUNA_MUSIC
-      : [];
+const musicData = Array.isArray(window.SETSUNA_MUSIC)
+  ? window.SETSUNA_MUSIC
+  : [];
 
-    const originalMusic = musicData
-      .filter(item => item.type === "original")
-      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate));
+const latestMusic = [...musicData]
+  .sort((a, b) =>
+    String(b.releaseDate || "").localeCompare(
+      String(a.releaseDate || "")
+    )
+  )
+  .slice(0, 3);
 
-      const coverMusic = musicData
-      .filter(item => item.type === "cover")
-      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate));
+const latestMusicContainer =
+  document.getElementById("latestMusic");
 
 
-    function formatMusicDate(date) {
-      return String(date || "").replaceAll("-", "／");
+function formatMusicDate(date) {
+  return String(date || "").replaceAll("-", "／");
+}
+
+
+if (latestMusic.length === 0) {
+
+  latestMusicContainer.innerHTML = `
+    <div class="empty">
+      目前尚未收錄正式音樂作品。
+    </div>
+  `;
+
+} else {
+
+  latestMusic.forEach(item => {
+
+    const card = document.createElement("a");
+
+    card.className = "stream-card";
+
+    card.href =
+      `https://www.youtube.com/watch?v=${item.videoId}`;
+
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+
+
+    const img = document.createElement("img");
+
+    img.src =
+      `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+
+    img.alt =
+      item.title || "正式音樂作品";
+
+
+    const info =
+      document.createElement("div");
+
+    info.className =
+      "stream-info";
+
+
+    const date =
+      document.createElement("div");
+
+    date.className =
+      "stream-date";
+
+    date.textContent =
+      formatMusicDate(item.releaseDate);
+
+
+    const title =
+      document.createElement("h3");
+
+    title.className =
+      "stream-title";
+
+    title.textContent =
+      item.title || "未命名作品";
+
+
+    const original =
+      document.createElement("div");
+
+    original.className =
+      "music-preview-original";
+
+    if (item.type === "cover" && item.originalArtist) {
+      original.textContent =
+        `原唱：${item.originalArtist}`;
+    } else if (item.type === "original") {
+      original.textContent =
+        "Original Song";
     }
 
 
-    const originalSummary =
-      document.getElementById("homeOriginalSummary");
+    info.appendChild(date);
+    info.appendChild(title);
 
-    const coverSummary =
-      document.getElementById("homeCoverSummary");
-
-
-    if (originalMusic.length === 0) {
-
-      originalSummary.textContent =
-        "目前尚未收錄正式原創作品。";
-
-    } else {
-
-      const latestOriginal = originalMusic[0];
-
-      originalSummary.innerHTML = `
-        ${originalMusic.length} 首正式原創作品<br>
-        最新作品：${latestOriginal.title}
-        ｜${formatMusicDate(latestOriginal.releaseDate)}
-      `;
-
+    if (original.textContent) {
+      info.appendChild(original);
     }
 
+    card.appendChild(img);
+    card.appendChild(info);
 
-    if (coverMusic.length === 0) {
+    latestMusicContainer.appendChild(card);
 
-      coverSummary.textContent =
-        "目前尚未收錄正式 Cover 作品。";
+  });
 
-    } else {
-
-      const latestCover = coverMusic[0];
-
-      coverSummary.innerHTML = `
-        ${coverMusic.length} 首正式 Cover<br>
-        最新作品：${latestCover.title}
-        ｜${formatMusicDate(latestCover.releaseDate)}
-      `;
-
+}
     }
     
    </script>
