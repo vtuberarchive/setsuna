@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>PROFILE｜剎那 SETSUNA</title>
+
 
   <!-- Font Awesome Icons -->
   <link
@@ -12,10 +19,13 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
+
 
     body {
       margin: 0;
@@ -24,30 +34,44 @@
       color: #f5f5f5;
     }
 
+
     a {
       color: inherit;
       text-decoration: none;
     }
 
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
     header {
       position: sticky;
       top: 0;
       z-index: 100;
+
       background: rgba(13, 15, 20, 0.95);
       border-bottom: 1px solid #242833;
+
       backdrop-filter: blur(10px);
     }
+
 
     .nav {
       width: 100%;
       max-width: 1200px;
+
       margin: 0 auto;
       padding: 18px 24px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
+
 
     .logo {
       font-size: 20px;
@@ -55,9 +79,11 @@
       white-space: nowrap;
     }
 
+
     .logo span {
       color: #ff7aa8;
     }
+
 
     .nav-links {
       display: flex;
@@ -65,348 +91,918 @@
       gap: 24px;
     }
 
+
     .nav-links a {
       color: #c8ccd5;
       text-decoration: none;
+
       font-size: 14px;
       font-weight: 500;
     }
+
 
     .nav-links a:hover,
     .nav-links .active {
       color: #ff7aa8;
     }
 
+
+
+    /* =========================================================
+       MAIN
+    ========================================================= */
+
     main {
       width: 100%;
       max-width: 1200px;
+
       margin: 0 auto;
-      padding: 80px 24px 100px;
+
+      padding:
+        80px
+        24px
+        100px;
     }
 
-    /* PROFILE HERO */
+
+
+    /* =========================================================
+       PROFILE HERO
+    ========================================================= */
+
     .profile-hero {
-      padding: 0 0 56px;
-      border-bottom: 1px solid #242936;
+      padding:
+        0
+        0
+        56px;
+
+      border-bottom:
+        1px solid
+        #242936;
     }
+
 
     .profile-hero h1 {
       margin: 0;
-      font-size: clamp(48px, 7vw, 88px);
+
+      font-size:
+        clamp(
+          48px,
+          7vw,
+          88px
+        );
+
       line-height: 1;
-      letter-spacing: -0.03em;
+
+      letter-spacing:
+        -0.03em;
     }
+
 
     .profile-hero h1 span {
       color: #ff7aa8;
     }
 
+
     .profile-hashtag {
-      margin: 18px 0 0;
-      color: #ff7aa8;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      margin:
+        18px
+        0
+        0;
+
+      color:
+        #ff7aa8;
+
+      font-size:
+        18px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        0.02em;
     }
+
 
     .profile-intro {
-      margin: 26px 0 0;
-      max-width: 680px;
-      color: #c5cad3;
-      font-size: 17px;
-      line-height: 1.9;
+      margin:
+        26px
+        0
+        0;
+
+      max-width:
+        680px;
+
+      color:
+        #c5cad3;
+
+      font-size:
+        17px;
+
+      line-height:
+        1.9;
     }
 
-    /* PROFILE CONTENT */
+
+
+    /* =========================================================
+       PROFILE CONTENT
+    ========================================================= */
+
     .profile-content {
-      padding: 56px 0 0;
+      padding:
+        56px
+        0
+        0;
     }
+
 
     .profile-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 64px;
+
+      grid-template-columns:
+        1fr;
+
+      gap:
+        64px;
     }
+
+
+
+    /* =========================================================
+       ABOUT + ORIGIN + CHARACTER
+    ========================================================= */
+
+    .profile-intro-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        380px;
+
+      gap:
+        60px;
+
+      align-items:
+        center;
+    }
+
+
+    .profile-intro-sections {
+      display: grid;
+
+      gap:
+        64px;
+    }
+
+
+    /*
+      右側角色圖區域
+    */
+
+    .profile-character {
+      position: relative;
+
+      width: 100%;
+      min-height: 520px;
+
+      overflow: hidden;
+    }
+
+
+    /*
+      原圖左右透明區很多，
+      所以這裡故意把整張 PNG 放大，
+      讓實際人物本體呈現適合的大小。
+    */
+
+    .profile-character img {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      width: 930px;
+      max-width: none;
+
+      height: auto;
+
+      display: block;
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        );
+
+      pointer-events: none;
+      user-select: none;
+    }
+
+
+
+    /* =========================================================
+       PROFILE SECTIONS
+    ========================================================= */
 
     .section-label {
-      margin: 0 0 10px;
-      color: #ff7aa8;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+      margin:
+        0
+        0
+        10px;
+
+      color:
+        #ff7aa8;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        0.16em;
     }
 
+
     .profile-section h2 {
-      margin: 0 0 22px;
-      font-size: 28px;
+      margin:
+        0
+        0
+        22px;
+
+      font-size:
+        28px;
     }
+
 
     .profile-section p {
       margin: 0;
-      color: #c5cad3;
-      font-size: 16px;
-      line-height: 2;
+
+      color:
+        #c5cad3;
+
+      font-size:
+        16px;
+
+      line-height:
+        2;
     }
 
-    /* BASIC PROFILE */
+
+
+    /* =========================================================
+       BASIC PROFILE
+    ========================================================= */
+
     .info-box {
-      padding: 26px;
-      background: #11141b;
-      border: 1px solid #242936;
-      border-radius: 16px;
+      padding:
+        26px;
+
+      background:
+        #11141b;
+
+      border:
+        1px solid
+        #242936;
+
+      border-radius:
+        16px;
     }
+
 
     .info-row {
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 16px;
-      padding: 14px 0;
-      border-bottom: 1px solid #242936;
+
+      grid-template-columns:
+        160px
+        1fr;
+
+      gap:
+        16px;
+
+      padding:
+        14px
+        0;
+
+      border-bottom:
+        1px solid
+        #242936;
     }
+
 
     .info-row:first-child {
       padding-top: 0;
     }
+
 
     .info-row:last-child {
       padding-bottom: 0;
       border-bottom: none;
     }
 
+
     .info-title {
-      color: #f5f5f5;
-      font-size: 18px;
-      font-weight: 700;
-      white-space: nowrap;
+      color:
+        #f5f5f5;
+
+      font-size:
+        18px;
+
+      font-weight:
+        700;
+
+      white-space:
+        nowrap;
     }
+
 
     .info-value {
-      color: #f5f5f5;
-      font-size: 16px;
-      line-height: 1.6;
+      color:
+        #f5f5f5;
+
+      font-size:
+        16px;
+
+      line-height:
+        1.6;
     }
+
 
     .info-value a {
-      color: #c5cad3;
+      color:
+        #c5cad3;
     }
+
 
     .info-value a:hover {
-      color: #ff7aa8;
+      color:
+        #ff7aa8;
     }
 
-    /* OFFICIAL LINKS */
+
+
+    /* =========================================================
+       OFFICIAL LINKS
+    ========================================================= */
+
     .platform-links {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 22px;
-      margin-top: 20px;
+
+      gap:
+        22px;
+
+      margin-top:
+        20px;
     }
+
 
     .platform-links a {
-      width: 88px;
-      height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #4a4f5c;
-      border-radius: 50%;
-      color: #c5cad3;
-      font-size: 36px;
-      transition: 0.2s ease;
+      width:
+        88px;
+
+      height:
+        88px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border:
+        1px solid
+        #4a4f5c;
+
+      border-radius:
+        50%;
+
+      color:
+        #c5cad3;
+
+      font-size:
+        36px;
+
+      transition:
+        0.2s ease;
     }
+
 
     .platform-links a:hover {
-      color: #ff7aa8;
-      border-color: #ff7aa8;
-      transform: translateY(-2px);
+      color:
+        #ff7aa8;
+
+      border-color:
+        #ff7aa8;
+
+      transform:
+        translateY(-2px);
     }
 
-    /* MILESTONES */
+
+
+    /* =========================================================
+       MILESTONES
+    ========================================================= */
+
     .milestone-list {
-      border-top: 1px solid #242936;
+      border-top:
+        1px solid
+        #242936;
     }
+
 
     .milestone-item {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 28px;
-      padding: 20px 0;
-      border-bottom: 1px solid #242936;
+
+      grid-template-columns:
+        180px
+        1fr;
+
+      gap:
+        28px;
+
+      padding:
+        20px
+        0;
+
+      border-bottom:
+        1px solid
+        #242936;
     }
+
 
     .milestone-date {
-      color: #ff7aa8;
-      font-size: 16px;
-      font-weight: 700;
-      white-space: nowrap;
+      color:
+        #ff7aa8;
+
+      font-size:
+        16px;
+
+      font-weight:
+        700;
+
+      white-space:
+        nowrap;
     }
+
 
     .milestone-text {
-      color: #f5f5f5;
-      font-size: 17px;
-      font-weight: 600;
+      color:
+        #f5f5f5;
+
+      font-size:
+        17px;
+
+      font-weight:
+        600;
     }
 
-    /* MOBILE */
-    @media (max-width: 760px) {
-      .nav {
-        align-items: flex-start;
-        gap: 18px;
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .profile-intro-layout {
+        grid-template-columns:
+          1fr;
+
+        gap:
+          40px;
       }
+
+
+      .profile-character {
+        min-height:
+          440px;
+      }
+
+
+      .profile-character img {
+        width:
+          790px;
+      }
+
+    }
+
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 760px) {
+
+      .nav {
+        align-items:
+          flex-start;
+
+        gap:
+          18px;
+      }
+
 
       .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        gap:
+          12px;
+
+        flex-wrap:
+          wrap;
+
+        justify-content:
+          flex-end;
       }
+
 
       main {
-        padding: 50px 20px 70px;
+        padding:
+          50px
+          20px
+          70px;
       }
+
 
       .profile-hero {
-        padding-bottom: 40px;
+        padding-bottom:
+          40px;
       }
+
 
       .profile-intro {
-        font-size: 16px;
+        font-size:
+          16px;
       }
+
 
       .profile-content {
-        padding-top: 40px;
+        padding-top:
+          40px;
       }
+
 
       .profile-grid {
-        gap: 56px;
+        gap:
+          56px;
       }
+
+
+      .profile-intro-layout {
+        grid-template-columns:
+          1fr;
+
+        gap:
+          40px;
+      }
+
+
+      .profile-intro-sections {
+        gap:
+          56px;
+      }
+
+
+      .profile-character {
+        min-height:
+          400px;
+      }
+
+
+      .profile-character img {
+        width:
+          720px;
+      }
+
 
       .info-row {
-        grid-template-columns: 1fr;
-        gap: 6px;
+        grid-template-columns:
+          1fr;
+
+        gap:
+          6px;
       }
+
 
       .info-title {
-        white-space: normal;
+        white-space:
+          normal;
       }
+
 
       .platform-links {
-        gap: 14px;
+        gap:
+          14px;
       }
+
 
       .platform-links a {
-        width: 68px;
-        height: 68px;
-        font-size: 28px;
+        width:
+          68px;
+
+        height:
+          68px;
+
+        font-size:
+          28px;
       }
 
+
       .milestone-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        grid-template-columns:
+          1fr;
+
+        gap:
+          8px;
       }
+
     }
+
   </style>
+
 </head>
+
+
 
 <body>
 
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
   <header>
+
     <div class="nav">
+
 
       <div class="logo">
         VTuber <span>Archive</span>
       </div>
 
+
       <nav class="nav-links">
-        <a href="index.html">HOME</a>
-        <a href="profile.html" class="active">PROFILE</a>
-        <a href="streams.html">STREAMS</a>
-        <a href="search.html">SONG SEARCH</a>
-        <a href="index.html#merch">MERCH</a>
-        <a href="index.html#about">ABOUT</a>
+
+        <a href="index.html">
+          HOME
+        </a>
+
+        <a
+          href="profile.html"
+          class="active"
+        >
+          PROFILE
+        </a>
+
+        <a href="streams.html">
+          STREAMS
+        </a>
+
+        <a href="search.html">
+          SONG SEARCH
+        </a>
+
+        <a href="music.html">
+          MUSIC
+        </a>
+
+        <a href="index.html#merch">
+          MERCH
+        </a>
+
+        <a href="index.html#about">
+          ABOUT
+        </a>
+
       </nav>
 
+
     </div>
+
   </header>
+
+
 
   <main>
 
-    <!-- PROFILE HERO -->
+
+    <!-- =========================================================
+         PROFILE HERO
+    ========================================================== -->
+
     <section class="profile-hero">
 
+
       <h1>
-        剎那 <span>SETSUNA</span>
+        剎那
+        <span>
+          SETSUNA
+        </span>
       </h1>
+
 
       <p class="profile-hashtag">
         #魂を歌う剎那
       </p>
 
+
       <p class="profile-intro">
-        魂を歌声に乗せる Vsinger。<br>
+
+        魂を歌声に乗せる Vsinger。
+
+        <br>
+
         七號空間站的站長，以吉他自彈自唱與音樂活動為主。
+
       </p>
+
 
     </section>
 
+
+
+    <!-- =========================================================
+         PROFILE CONTENT
+    ========================================================== -->
+
     <div class="profile-content">
+
       <div class="profile-grid">
 
-        <!-- ABOUT -->
+
+
+        <!-- =====================================================
+             ABOUT + ORIGIN + CHARACTER
+        ====================================================== -->
+
+        <div class="profile-intro-layout">
+
+
+          <!-- LEFT -->
+
+          <div class="profile-intro-sections">
+
+
+            <!-- ABOUT -->
+
+            <section class="profile-section">
+
+              <p class="section-label">
+                ABOUT
+              </p>
+
+              <h2>
+                關於剎那
+              </h2>
+
+              <p>
+
+                我是七號空間站的站長「剎那」！
+
+                <br>
+
+                你也可以叫我「站長」、「那那」或是「碗粿」，
+
+                <br>
+
+                是個以吉他自彈自唱為主の主bo唷🎸
+
+              </p>
+
+            </section>
+
+
+
+            <!-- ORIGIN -->
+
+            <section class="profile-section">
+
+              <p class="section-label">
+                ORIGIN
+              </p>
+
+              <h2>
+                為什麼叫「碗粿」？
+              </h2>
+
+              <p>
+
+                初次直播使用的初號機長得很像碗粿，
+
+                <br>
+
+                所以碗粿成為了代名詞。
+
+                <br>
+
+                因此我只是長得很像碗粿但不是碗粿的主播✨
+
+              </p>
+
+            </section>
+
+
+          </div>
+
+
+
+          <!-- RIGHT CHARACTER -->
+
+          <div
+            class="profile-character"
+            aria-label="剎那 SETSUNA 角色立繪"
+          >
+
+            <img
+              src="images/setsuna-profile.png"
+              alt="剎那 SETSUNA 角色立繪"
+            >
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================================
+             BASIC PROFILE
+        ====================================================== -->
+
         <section class="profile-section">
 
-          <p class="section-label">ABOUT</p>
-          <h2>關於剎那</h2>
 
-          <p>
-            我是七號空間站的站長「剎那」！<br>
-            你也可以叫我「站長」、「那那」或是「碗粿」，<br>
-            是個以吉他自彈自唱為主の主bo唷🎸
+          <p class="section-label">
+            BASIC PROFILE
           </p>
 
-        </section>
 
-        <!-- ORIGIN -->
-        <section class="profile-section">
+          <h2>
+            基本資料
+          </h2>
 
-          <p class="section-label">ORIGIN</p>
-          <h2>為什麼叫「碗粿」？</h2>
-
-          <p>
-            初次直播使用的初號機長得很像碗粿，<br>
-            所以碗粿成為了代名詞。<br>
-            因此我只是長得很像碗粿但不是碗粿的主播✨
-          </p>
-
-        </section>
-
-        <!-- BASIC PROFILE -->
-        <section class="profile-section">
-
-          <p class="section-label">BASIC PROFILE</p>
-          <h2>基本資料</h2>
 
           <div class="info-box">
 
-            <div class="info-row">
-              <div class="info-title">暱稱</div>
-              <div class="info-value">站長／那那／碗粿</div>
-            </div>
 
             <div class="info-row">
-              <div class="info-title">身高</div>
-              <div class="info-value">待補</div>
-            </div>
 
-            <div class="info-row">
-              <div class="info-title">生日</div>
-              <div class="info-value">8／20</div>
-            </div>
+              <div class="info-title">
+                暱稱
+              </div>
 
-            <div class="info-row">
-              <div class="info-title">DESIGN</div>
               <div class="info-value">
+                站長／那那／碗粿
+              </div>
+
+            </div>
+
+
+
+            <div class="info-row">
+
+              <div class="info-title">
+                身高
+              </div>
+
+              <div class="info-value">
+                待補
+              </div>
+
+            </div>
+
+
+
+            <div class="info-row">
+
+              <div class="info-title">
+                生日
+              </div>
+
+              <div class="info-value">
+                8／20
+              </div>
+
+            </div>
+
+
+
+            <div class="info-row">
+
+              <div class="info-title">
+                DESIGN
+              </div>
+
+              <div class="info-value">
+
                 皮蛋沒蛋 ／
+
                 <a
                   href="https://x.com/pidanmeida28101"
                   target="_blank"
@@ -414,13 +1010,23 @@
                 >
                   @pidanmeida28101
                 </a>
+
               </div>
+
             </div>
 
+
+
             <div class="info-row">
-              <div class="info-title">ART DIRECTOR</div>
+
+              <div class="info-title">
+                ART DIRECTOR
+              </div>
+
               <div class="info-value">
+
                 望結 ／
+
                 <a
                   href="https://x.com/miyusama0214"
                   target="_blank"
@@ -428,13 +1034,23 @@
                 >
                   @miyusama0214
                 </a>
+
               </div>
+
             </div>
 
+
+
             <div class="info-row">
-              <div class="info-title">Live2D</div>
+
+              <div class="info-title">
+                Live2D
+              </div>
+
               <div class="info-value">
+
                 老安 ／
+
                 <a
                   href="https://x.com/Krayv_An"
                   target="_blank"
@@ -442,25 +1058,52 @@
                 >
                   @Krayv_An
                 </a>
+
               </div>
+
             </div>
 
+
+
             <div class="info-row">
-              <div class="info-title">粉絲名</div>
-              <div class="info-value">粉粿</div>
+
+              <div class="info-title">
+                粉絲名
+              </div>
+
+              <div class="info-value">
+                粉粿
+              </div>
+
             </div>
+
 
           </div>
 
+
         </section>
 
-        <!-- OFFICIAL LINKS -->
+
+
+        <!-- =====================================================
+             OFFICIAL LINKS
+        ====================================================== -->
+
         <section class="profile-section">
 
-          <p class="section-label">OFFICIAL LINKS</p>
-          <h2>官方連結</h2>
+
+          <p class="section-label">
+            OFFICIAL LINKS
+          </p>
+
+
+          <h2>
+            官方連結
+          </h2>
+
 
           <div class="platform-links">
+
 
             <a
               href="https://www.youtube.com/@setsuna_wague"
@@ -472,6 +1115,8 @@
               <i class="fa-brands fa-youtube"></i>
             </a>
 
+
+
             <a
               href="https://www.twitch.tv/setsuna_wague"
               target="_blank"
@@ -481,6 +1126,8 @@
             >
               <i class="fa-brands fa-twitch"></i>
             </a>
+
+
 
             <a
               href="https://x.com/SETSUNA_VII"
@@ -492,6 +1139,8 @@
               <i class="fa-brands fa-x-twitter"></i>
             </a>
 
+
+
             <a
               href="https://discord.com/invite/Y9v7zZbhNj"
               target="_blank"
@@ -502,86 +1151,215 @@
               <i class="fa-brands fa-discord"></i>
             </a>
 
+
           </div>
+
 
         </section>
 
-        <!-- SELECTED MILESTONES -->
+
+
+        <!-- =====================================================
+             SELECTED MILESTONES
+        ====================================================== -->
+
         <section class="profile-section">
 
-          <p class="section-label">SELECTED MILESTONES</p>
-          <h2>重要里程碑</h2>
+
+          <p class="section-label">
+            SELECTED MILESTONES
+          </p>
+
+
+          <h2>
+            重要里程碑
+          </h2>
+
 
           <div class="milestone-list">
 
-            <div class="milestone-item">
-              <div class="milestone-date">2023／10／21</div>
-              <div class="milestone-text">初配信</div>
-            </div>
 
             <div class="milestone-item">
-              <div class="milestone-date">2024／03／27</div>
-              <div class="milestone-text">二號機亮相</div>
+
+              <div class="milestone-date">
+                2023／10／21
+              </div>
+
+              <div class="milestone-text">
+                初配信
+              </div>
+
             </div>
 
-            <div class="milestone-item">
-              <div class="milestone-date">2024／06／09</div>
-              <div class="milestone-text">重大告知</div>
-            </div>
+
 
             <div class="milestone-item">
-              <div class="milestone-date">2024／06／15</div>
-              <div class="milestone-text">三號機發表大會</div>
+
+              <div class="milestone-date">
+                2024／03／27
+              </div>
+
+              <div class="milestone-text">
+                二號機亮相
+              </div>
+
             </div>
 
-            <div class="milestone-item">
-              <div class="milestone-date">2024／09 下旬</div>
-              <div class="milestone-text">活動休止／進入空間站休眠艙</div>
-            </div>
+
 
             <div class="milestone-item">
-              <div class="milestone-date">2025／04／22</div>
-              <div class="milestone-text">新 YouTube 頻道開設／公開</div>
+
+              <div class="milestone-date">
+                2024／06／09
+              </div>
+
+              <div class="milestone-text">
+                重大告知
+              </div>
+
             </div>
 
-            <div class="milestone-item">
-              <div class="milestone-date">2025／10／09</div>
-              <div class="milestone-text">新 YouTube 頻道達成 500 訂閱</div>
-            </div>
+
 
             <div class="milestone-item">
-              <div class="milestone-date">2025／11／01</div>
-              <div class="milestone-text">新頻道首支 Cover〈ビビデバ〉公開</div>
+
+              <div class="milestone-date">
+                2024／06／15
+              </div>
+
+              <div class="milestone-text">
+                三號機發表大會
+              </div>
+
             </div>
 
-            <div class="milestone-item">
-              <div class="milestone-date">2025／11／08</div>
-              <div class="milestone-text">於新頻道正式回歸配信</div>
-            </div>
+
 
             <div class="milestone-item">
-              <div class="milestone-date">2025／12／21</div>
-              <div class="milestone-text">新 YouTube 頻道達成 1,000 訂閱</div>
+
+              <div class="milestone-date">
+                2024／09 下旬
+              </div>
+
+              <div class="milestone-text">
+                活動休止／進入空間站休眠艙
+              </div>
+
             </div>
 
-            <div class="milestone-item">
-              <div class="milestone-date">2026／02／03</div>
-              <div class="milestone-text">新 YouTube 慶祝頻道收益化</div>
-            </div>
+
 
             <div class="milestone-item">
-              <div class="milestone-date">2026／07／16</div>
-              <div class="milestone-text">新 YouTube 頻道達成 2,000 訂閱</div>
+
+              <div class="milestone-date">
+                2025／04／22
+              </div>
+
+              <div class="milestone-text">
+                新 YouTube 頻道開設／公開
+              </div>
+
             </div>
+
+
+
+            <div class="milestone-item">
+
+              <div class="milestone-date">
+                2025／10／09
+              </div>
+
+              <div class="milestone-text">
+                新 YouTube 頻道達成 500 訂閱
+              </div>
+
+            </div>
+
+
+
+            <div class="milestone-item">
+
+              <div class="milestone-date">
+                2025／11／01
+              </div>
+
+              <div class="milestone-text">
+                新頻道首支 Cover〈ビビデバ〉公開
+              </div>
+
+            </div>
+
+
+
+            <div class="milestone-item">
+
+              <div class="milestone-date">
+                2025／11／08
+              </div>
+
+              <div class="milestone-text">
+                於新頻道正式回歸配信
+              </div>
+
+            </div>
+
+
+
+            <div class="milestone-item">
+
+              <div class="milestone-date">
+                2025／12／21
+              </div>
+
+              <div class="milestone-text">
+                新 YouTube 頻道達成 1,000 訂閱
+              </div>
+
+            </div>
+
+
+
+            <div class="milestone-item">
+
+              <div class="milestone-date">
+                2026／02／03
+              </div>
+
+              <div class="milestone-text">
+                新 YouTube 慶祝頻道收益化
+              </div>
+
+            </div>
+
+
+
+            <div class="milestone-item">
+
+              <div class="milestone-date">
+                2026／07／16
+              </div>
+
+              <div class="milestone-text">
+                新 YouTube 頻道達成 2,000 訂閱
+              </div>
+
+            </div>
+
 
           </div>
 
+
         </section>
 
+
       </div>
+
     </div>
+
 
   </main>
 
+
 </body>
+
 </html>
