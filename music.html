@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MUSIC｜剎那 SETSUNA</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      background: #0d0f14;
+      color: #f5f5f5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 15, 20, 0.95);
+      border-bottom: 1px solid #242833;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #ff7aa8;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #c8ccd5;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #ff7aa8;
+    }
+
+    /* MAIN */
+    main {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+    }
+
+    /* HERO */
+    .music-hero {
+      margin-bottom: 52px;
+    }
+
+    .music-hero h1 {
+      margin: 0;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .music-hero h1 span {
+      color: #ff7aa8;
+    }
+
+    .music-intro {
+      margin: 24px 0 0;
+      max-width: 720px;
+      color: #c5cad3;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    /* STATS */
+    .music-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      background: #151820;
+      border: 1px solid #242936;
+      border-radius: 18px;
+    }
+
+    .stat-number {
+      margin-bottom: 8px;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      color: #8f96a3;
+      font-size: 14px;
+    }
+
+    /* SECTION */
+    .music-section {
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #858b98;
+      font-size: 14px;
+    }
+
+    /* MUSIC CARDS */
+    .music-list {
+      display: grid;
+      gap: 26px;
+    }
+
+    .music-card {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+
+      background: #151820;
+      border: 1px solid #242936;
+      border-radius: 20px;
+
+      transition: 0.25s ease;
+    }
+
+    .music-card:hover {
+      border-color: #ff7aa8;
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .music-thumbnail-link {
+      display: block;
+      background: #000;
+    }
+
+    .music-thumbnail {
+      width: 100%;
+      height: 100%;
+      min-height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .music-info {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .music-date {
+      margin-bottom: 10px;
+      color: #ff7aa8;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .music-title {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.4;
+    }
+
+    .music-original {
+      margin-top: 7px;
+      color: #aab0bd;
+      font-size: 15px;
+    }
+
+    .credit-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 22px;
+      color: #9298a5;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .credit-list strong {
+      color: #c5cad3;
+    }
+
+    .credit-list a:hover {
+      color: #ff7aa8;
+    }
+
+    .music-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .music-button {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid #ff7aa8;
+      border-radius: 999px;
+      color: #ff7aa8;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .music-button:hover {
+      background: #ff7aa8;
+      color: #0d0f14;
+    }
+
+    .empty {
+      padding: 36px 28px;
+      text-align: center;
+      color: #888f9c;
+      background: #151820;
+      border: 1px solid #242936;
+      border-radius: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 760px) {
+      .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      main {
+        padding: 50px 20px 70px;
+      }
+
+      .music-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        display: block;
+      }
+
+      .section-title p {
+        margin-top: 8px;
+      }
+
+      .music-card {
+        grid-template-columns: 1fr;
+      }
+
+      .music-thumbnail {
+        min-height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .music-info {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+
+      <div class="logo">
+        VTuber <span>Archive</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="streams.html">STREAMS</a>
+        <a href="search.html">SONG SEARCH</a>
+        <a href="music.html" class="active">MUSIC</a>
+        <a href="index.html#merch">MERCH</a>
+        <a href="index.html#about">ABOUT</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="music-hero">
+
+      <h1>
+        Official <span>Music</span>
+      </h1>
+
+      <p class="music-intro">
+        收錄剎那 SETSUNA 正式發布的音樂作品。<br>
+        包含 Original Songs 與 Covers，並整理發布日期、原曲與製作資訊。
+      </p>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="music-stats">
+
+      <div class="stat-card">
+        <div class="stat-number" id="totalCount">—</div>
+        <div class="stat-label">正式作品</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="originalCount">—</div>
+        <div class="stat-label">Original Songs</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="coverCount">—</div>
+        <div class="stat-label">Covers</div>
+      </div>
+
+    </section>
+
+
+    <!-- ORIGINAL -->
+
+    <section class="music-section">
+
+      <div class="section-title">
+        <h2>Original Songs</h2>
+        <p>正式原創作品</p>
+      </div>
+
+      <div
+        class="music-list"
+        id="originalList"
+      ></div>
+
+    </section>
+
+
+    <!-- COVERS -->
+
+    <section class="music-section">
+
+      <div class="section-title">
+        <h2>Covers</h2>
+        <p>正式 Cover 作品</p>
+      </div>
+
+      <div
+        class="music-list"
+        id="coverList"
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <script src="data/music-data.js"></script>
+
+  <script>
+
+    const music =
+      Array.isArray(window.SETSUNA_MUSIC)
+        ? window.SETSUNA_MUSIC
+        : [];
+
+
+    const originals =
+      music
+        .filter(item => item.type === "original")
+        .sort((a, b) =>
+          b.releaseDate.localeCompare(a.releaseDate)
+        );
+
+
+    const covers =
+      music
+        .filter(item => item.type === "cover")
+        .sort((a, b) =>
+          b.releaseDate.localeCompare(a.releaseDate)
+        );
+
+
+    document.getElementById("totalCount").textContent =
+      music.length;
+
+    document.getElementById("originalCount").textContent =
+      originals.length;
+
+    document.getElementById("coverCount").textContent =
+      covers.length;
+
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+
+    function formatDate(date) {
+      return String(date || "")
+        .replaceAll("-", "／");
+    }
+
+
+    function buildMusicCard(item) {
+
+      const youtubeUrl =
+        `https://www.youtube.com/watch?v=${encodeURIComponent(item.videoId)}`;
+
+      const originalArtist =
+        item.originalArtist
+          ? `
+            <div class="music-original">
+              原唱：${escapeHtml(item.originalArtist)}
+            </div>
+          `
+          : "";
+
+
+      const credits =
+        item.credits || {};
+
+
+      const creditRows = [];
+
+
+      if (credits.vocal) {
+        creditRows.push(`
+          <div>
+            <strong>Vocal</strong>：
+            <a
+              href="${escapeHtml(credits.vocal.url)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ${escapeHtml(credits.vocal.name)}
+            </a>
+          </div>
+        `);
+      }
+
+
+      if (credits.illustration) {
+        creditRows.push(`
+          <div>
+            <strong>Illustration</strong>：
+            <a
+              href="${escapeHtml(credits.illustration.url)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ${escapeHtml(credits.illustration.name)}
+            </a>
+          </div>
+        `);
+      }
+
+
+      if (credits.movie) {
+        creditRows.push(`
+          <div>
+            <strong>Movie</strong>：
+            <a
+              href="${escapeHtml(credits.movie.url)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ${escapeHtml(credits.movie.name)}
+            </a>
+          </div>
+        `);
+      }
+
+
+      const originalButton =
+        item.originalVideo?.url
+          ? `
+            <a
+              class="music-button"
+              href="${escapeHtml(item.originalVideo.url)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              原曲
+            </a>
+          `
+          : "";
+
+
+      return `
+        <article class="music-card">
+
+          <a
+            class="music-thumbnail-link"
+            href="${youtubeUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="music-thumbnail"
+              src="https://img.youtube.com/vi/${encodeURIComponent(item.videoId)}/hqdefault.jpg"
+              alt="${escapeHtml(item.title)}"
+            >
+          </a>
+
+
+          <div class="music-info">
+
+            <div class="music-date">
+              ${formatDate(item.releaseDate)}
+            </div>
+
+            <h3 class="music-title">
+              ${escapeHtml(item.title)}
+            </h3>
+
+            ${originalArtist}
+
+
+            <div class="credit-list">
+              ${creditRows.join("")}
+            </div>
+
+
+            <div class="music-actions">
+
+              <a
+                class="music-button"
+                href="${youtubeUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                前往 YouTube
+              </a>
+
+              ${originalButton}
+
+            </div>
+
+          </div>
+
+        </article>
+      `;
+    }
+
+
+    function renderMusicList(items, element, emptyText) {
+
+      if (items.length === 0) {
+
+        element.innerHTML = `
+          <div class="empty">
+            ${emptyText}
+          </div>
+        `;
+
+        return;
+      }
+
+
+      element.innerHTML =
+        items
+          .map(buildMusicCard)
+          .join("");
+    }
+
+
+    renderMusicList(
+      originals,
+      document.getElementById("originalList"),
+      "目前尚未收錄正式原創作品。"
+    );
+
+
+    renderMusicList(
+      covers,
+      document.getElementById("coverList"),
+      "目前尚未收錄正式 Cover 作品。"
+    );
+
+  </script>
+
+</body>
+</html>
