@@ -209,8 +209,15 @@
       line-height: 1.4;
     }
 
+    .music-heading {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
     .music-original {
-      margin-top: 7px;
+      margin: 0;
       color: #aab0bd;
       font-size: 15px;
     }
@@ -558,21 +565,15 @@
 
           <div class="music-info">
 
-            <div class="music-date">
-              ${formatDate(item.releaseDate)}
-            </div>
-
-            <h3 class="music-title">
+            <div class="music-heading">
+ 
+              <h3 class="music-title">
               ${escapeHtml(item.title)}
-            </h3>
+              </h3>
 
-            ${originalArtist}
+              ${originalArtist}
 
-
-            <div class="credit-list">
-              ${creditRows.join("")}
             </div>
-
 
             <div class="music-actions">
 
