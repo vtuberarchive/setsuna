@@ -2,7 +2,6 @@
 <html lang="zh-TW">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -12,20 +11,17 @@
 
   <title>PROFILE｜剎那 SETSUNA</title>
 
-
   <!-- Font Awesome Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
-
   <style>
 
     * {
       box-sizing: border-box;
     }
-
 
     body {
       margin: 0;
@@ -34,44 +30,33 @@
       color: #f5f5f5;
     }
 
-
     a {
       color: inherit;
       text-decoration: none;
     }
 
-
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
+    /* HEADER */
 
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-
       background: rgba(13, 15, 20, 0.95);
       border-bottom: 1px solid #242833;
-
       backdrop-filter: blur(10px);
     }
-
 
     .nav {
       width: 100%;
       max-width: 1200px;
-
       margin: 0 auto;
       padding: 18px 24px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 20px;
     }
-
 
     .logo {
       font-size: 20px;
@@ -79,11 +64,9 @@
       white-space: nowrap;
     }
 
-
     .logo span {
       color: #ff7aa8;
     }
-
 
     .nav-links {
       display: flex;
@@ -91,56 +74,32 @@
       gap: 24px;
     }
 
-
     .nav-links a {
       color: #c8ccd5;
-      text-decoration: none;
-
       font-size: 14px;
       font-weight: 500;
     }
-
 
     .nav-links a:hover,
     .nav-links .active {
       color: #ff7aa8;
     }
 
-
-
-    /* =========================================================
-       MAIN
-    ========================================================= */
+    /* MAIN */
 
     main {
       width: 100%;
       max-width: 1200px;
-
       margin: 0 auto;
-
-      padding:
-        80px
-        24px
-        100px;
+      padding: 80px 24px 100px;
     }
 
-
-
-    /* =========================================================
-       PROFILE HERO
-    ========================================================= */
+    /* PROFILE HERO */
 
     .profile-hero {
-      padding:
-        0
-        0
-        56px;
-
-      border-bottom:
-        1px solid
-        #242936;
+      padding: 0 0 56px;
+      border-bottom: 1px solid #242936;
     }
-
 
     .profile-hero h1 {
       margin: 0;
@@ -153,127 +112,87 @@
         );
 
       line-height: 1;
-
-      letter-spacing:
-        -0.03em;
+      letter-spacing: -0.03em;
     }
-
 
     .profile-hero h1 span {
       color: #ff7aa8;
     }
 
-
     .profile-hashtag {
-      margin:
-        18px
-        0
-        0;
+      margin: 18px 0 0;
+      color: #ff7aa8;
 
-      color:
-        #ff7aa8;
+      font-size: 18px;
+      font-weight: 700;
 
-      font-size:
-        18px;
-
-      font-weight:
-        700;
-
-      letter-spacing:
-        0.02em;
+      letter-spacing: 0.02em;
     }
-
 
     .profile-intro {
-      margin:
-        26px
-        0
-        0;
+      margin: 26px 0 0;
+      max-width: 680px;
 
-      max-width:
-        680px;
-
-      color:
-        #c5cad3;
-
-      font-size:
-        17px;
-
-      line-height:
-        1.9;
+      color: #c5cad3;
+      font-size: 17px;
+      line-height: 1.9;
     }
 
-
-
-    /* =========================================================
-       PROFILE CONTENT
-    ========================================================= */
+    /* PROFILE CONTENT */
 
     .profile-content {
-      padding:
-        56px
-        0
-        0;
+      padding: 56px 0 0;
     }
-
 
     .profile-grid {
       display: grid;
-
-      grid-template-columns:
-        1fr;
-
-      gap:
-        64px;
+      grid-template-columns: 1fr;
+      gap: 64px;
     }
 
-
-
-    /* =========================================================
-       ABOUT + ORIGIN + CHARACTER
-    ========================================================= */
+    /* ABOUT + ORIGIN + CHARACTER */
 
     .profile-intro-layout {
       display: grid;
 
+      /*
+        左邊文字不要無限延伸，
+        右邊角色因此會整體往左。
+      */
       grid-template-columns:
-        minmax(0, 1fr)
-        380px;
+        minmax(0, 620px)
+        320px;
 
-      gap:
-        60px;
+      gap: 35px;
 
-      align-items:
-        center;
+      justify-content: start;
+      align-items: center;
     }
-
 
     .profile-intro-sections {
       display: grid;
-
-      gap:
-        64px;
+      gap: 64px;
     }
 
-
-    /*
-      右側角色圖區域
-    */
+    /* 角色立繪區 */
 
     .profile-character {
       position: relative;
 
-      width: 100%;
+      width: 320px;
       min-height: 520px;
 
       overflow: hidden;
+
+      /*
+        再稍微往左一點
+      */
+      transform: translateX(-35px);
     }
 
-
     /*
-      原圖左右透明區很多，
-      所以這裡故意把整張 PNG 放大，
-      讓實際人物本體呈現適合的大小。
+      原圖本身左右留白很多，
+      所以需要把整張 PNG 放大。
     */
 
     .profile-character img {
@@ -284,7 +203,6 @@
 
       width: 930px;
       max-width: none;
-
       height: auto;
 
       display: block;
@@ -299,427 +217,257 @@
       user-select: none;
     }
 
-
-
-    /* =========================================================
-       PROFILE SECTIONS
-    ========================================================= */
+    /* PROFILE SECTIONS */
 
     .section-label {
-      margin:
-        0
-        0
-        10px;
+      margin: 0 0 10px;
 
-      color:
-        #ff7aa8;
+      color: #ff7aa8;
 
-      font-size:
-        12px;
+      font-size: 12px;
+      font-weight: 700;
 
-      font-weight:
-        700;
-
-      letter-spacing:
-        0.16em;
+      letter-spacing: 0.16em;
     }
-
 
     .profile-section h2 {
-      margin:
-        0
-        0
-        22px;
-
-      font-size:
-        28px;
+      margin: 0 0 22px;
+      font-size: 28px;
     }
-
 
     .profile-section p {
       margin: 0;
 
-      color:
-        #c5cad3;
+      color: #c5cad3;
 
-      font-size:
-        16px;
-
-      line-height:
-        2;
+      font-size: 16px;
+      line-height: 2;
     }
 
-
-
-    /* =========================================================
-       BASIC PROFILE
-    ========================================================= */
+    /* BASIC PROFILE */
 
     .info-box {
-      padding:
-        26px;
+      padding: 26px;
 
-      background:
-        #11141b;
+      background: #11141b;
 
-      border:
-        1px solid
-        #242936;
-
-      border-radius:
-        16px;
+      border: 1px solid #242936;
+      border-radius: 16px;
     }
-
 
     .info-row {
       display: grid;
+      grid-template-columns: 160px 1fr;
 
-      grid-template-columns:
-        160px
-        1fr;
+      gap: 16px;
 
-      gap:
-        16px;
+      padding: 14px 0;
 
-      padding:
-        14px
-        0;
-
-      border-bottom:
-        1px solid
-        #242936;
+      border-bottom: 1px solid #242936;
     }
-
 
     .info-row:first-child {
       padding-top: 0;
     }
-
 
     .info-row:last-child {
       padding-bottom: 0;
       border-bottom: none;
     }
 
-
     .info-title {
-      color:
-        #f5f5f5;
+      color: #f5f5f5;
 
-      font-size:
-        18px;
+      font-size: 18px;
+      font-weight: 700;
 
-      font-weight:
-        700;
-
-      white-space:
-        nowrap;
+      white-space: nowrap;
     }
-
 
     .info-value {
-      color:
-        #f5f5f5;
+      color: #f5f5f5;
 
-      font-size:
-        16px;
-
-      line-height:
-        1.6;
+      font-size: 16px;
+      line-height: 1.6;
     }
-
 
     .info-value a {
-      color:
-        #c5cad3;
+      color: #c5cad3;
     }
-
 
     .info-value a:hover {
-      color:
-        #ff7aa8;
+      color: #ff7aa8;
     }
 
-
-
-    /* =========================================================
-       OFFICIAL LINKS
-    ========================================================= */
+    /* OFFICIAL LINKS */
 
     .platform-links {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
 
-      gap:
-        22px;
+      gap: 22px;
 
-      margin-top:
-        20px;
+      margin-top: 20px;
     }
-
 
     .platform-links a {
-      width:
-        88px;
+      width: 88px;
+      height: 88px;
 
-      height:
-        88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      display:
-        flex;
+      border: 1px solid #4a4f5c;
+      border-radius: 50%;
 
-      align-items:
-        center;
+      color: #c5cad3;
 
-      justify-content:
-        center;
+      font-size: 36px;
 
-      border:
-        1px solid
-        #4a4f5c;
-
-      border-radius:
-        50%;
-
-      color:
-        #c5cad3;
-
-      font-size:
-        36px;
-
-      transition:
-        0.2s ease;
+      transition: 0.2s ease;
     }
-
 
     .platform-links a:hover {
-      color:
-        #ff7aa8;
+      color: #ff7aa8;
+      border-color: #ff7aa8;
 
-      border-color:
-        #ff7aa8;
-
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
     }
 
-
-
-    /* =========================================================
-       MILESTONES
-    ========================================================= */
+    /* MILESTONES */
 
     .milestone-list {
-      border-top:
-        1px solid
-        #242936;
+      border-top: 1px solid #242936;
     }
-
 
     .milestone-item {
       display: grid;
+      grid-template-columns: 180px 1fr;
 
-      grid-template-columns:
-        180px
-        1fr;
+      gap: 28px;
 
-      gap:
-        28px;
+      padding: 20px 0;
 
-      padding:
-        20px
-        0;
-
-      border-bottom:
-        1px solid
-        #242936;
+      border-bottom: 1px solid #242936;
     }
-
 
     .milestone-date {
-      color:
-        #ff7aa8;
+      color: #ff7aa8;
 
-      font-size:
-        16px;
+      font-size: 16px;
+      font-weight: 700;
 
-      font-weight:
-        700;
-
-      white-space:
-        nowrap;
+      white-space: nowrap;
     }
-
 
     .milestone-text {
-      color:
-        #f5f5f5;
+      color: #f5f5f5;
 
-      font-size:
-        17px;
-
-      font-weight:
-        600;
+      font-size: 17px;
+      font-weight: 600;
     }
 
-
-
-    /* =========================================================
-       TABLET
-    ========================================================= */
+    /* TABLET */
 
     @media (max-width: 900px) {
 
       .profile-intro-layout {
-        grid-template-columns:
-          1fr;
-
-        gap:
-          40px;
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
-
 
       .profile-character {
-        min-height:
-          440px;
+        width: 100%;
+        min-height: 440px;
+
+        transform: none;
       }
 
-
       .profile-character img {
-        width:
-          790px;
+        width: 790px;
       }
 
     }
 
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
+    /* MOBILE */
 
     @media (max-width: 760px) {
 
       .nav {
-        align-items:
-          flex-start;
-
-        gap:
-          18px;
+        align-items: flex-start;
+        gap: 18px;
       }
-
 
       .nav-links {
-        gap:
-          12px;
-
-        flex-wrap:
-          wrap;
-
-        justify-content:
-          flex-end;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
-
 
       main {
-        padding:
-          50px
-          20px
-          70px;
+        padding: 50px 20px 70px;
       }
-
 
       .profile-hero {
-        padding-bottom:
-          40px;
+        padding-bottom: 40px;
       }
-
 
       .profile-intro {
-        font-size:
-          16px;
+        font-size: 16px;
       }
-
 
       .profile-content {
-        padding-top:
-          40px;
+        padding-top: 40px;
       }
-
 
       .profile-grid {
-        gap:
-          56px;
+        gap: 56px;
       }
-
 
       .profile-intro-layout {
-        grid-template-columns:
-          1fr;
-
-        gap:
-          40px;
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
-
 
       .profile-intro-sections {
-        gap:
-          56px;
+        gap: 56px;
       }
-
 
       .profile-character {
-        min-height:
-          400px;
+        width: 100%;
+        min-height: 400px;
+        transform: none;
       }
-
 
       .profile-character img {
-        width:
-          720px;
+        width: 720px;
       }
-
 
       .info-row {
-        grid-template-columns:
-          1fr;
-
-        gap:
-          6px;
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
-
 
       .info-title {
-        white-space:
-          normal;
+        white-space: normal;
       }
-
 
       .platform-links {
-        gap:
-          14px;
+        gap: 14px;
       }
-
 
       .platform-links a {
-        width:
-          68px;
+        width: 68px;
+        height: 68px;
 
-        height:
-          68px;
-
-        font-size:
-          28px;
+        font-size: 28px;
       }
 
-
       .milestone-item {
-        grid-template-columns:
-          1fr;
-
-        gap:
-          8px;
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
     }
@@ -728,24 +476,17 @@
 
 </head>
 
-
-
 <body>
 
-
-  <!-- =========================================================
-       HEADER
-  ========================================================== -->
+  <!-- HEADER -->
 
   <header>
 
     <div class="nav">
 
-
       <div class="logo">
         VTuber <span>Archive</span>
       </div>
-
 
       <nav class="nav-links">
 
@@ -782,22 +523,15 @@
 
       </nav>
 
-
     </div>
 
   </header>
 
-
-
   <main>
 
-
-    <!-- =========================================================
-         PROFILE HERO
-    ========================================================== -->
+    <!-- PROFILE HERO -->
 
     <section class="profile-hero">
-
 
       <h1>
         剎那
@@ -806,11 +540,9 @@
         </span>
       </h1>
 
-
       <p class="profile-hashtag">
         #魂を歌う剎那
       </p>
-
 
       <p class="profile-intro">
 
@@ -822,32 +554,21 @@
 
       </p>
 
-
     </section>
 
-
-
-    <!-- =========================================================
-         PROFILE CONTENT
-    ========================================================== -->
+    <!-- PROFILE CONTENT -->
 
     <div class="profile-content">
 
       <div class="profile-grid">
 
-
-
-        <!-- =====================================================
-             ABOUT + ORIGIN + CHARACTER
-        ====================================================== -->
+        <!-- ABOUT + ORIGIN + CHARACTER -->
 
         <div class="profile-intro-layout">
-
 
           <!-- LEFT -->
 
           <div class="profile-intro-sections">
-
 
             <!-- ABOUT -->
 
@@ -877,8 +598,6 @@
 
             </section>
 
-
-
             <!-- ORIGIN -->
 
             <section class="profile-section">
@@ -907,10 +626,7 @@
 
             </section>
 
-
           </div>
-
-
 
           <!-- RIGHT CHARACTER -->
 
@@ -926,30 +642,21 @@
 
           </div>
 
-
         </div>
 
-
-
-        <!-- =====================================================
-             BASIC PROFILE
-        ====================================================== -->
+        <!-- BASIC PROFILE -->
 
         <section class="profile-section">
-
 
           <p class="section-label">
             BASIC PROFILE
           </p>
 
-
           <h2>
             基本資料
           </h2>
 
-
           <div class="info-box">
-
 
             <div class="info-row">
 
@@ -963,8 +670,6 @@
 
             </div>
 
-
-
             <div class="info-row">
 
               <div class="info-title">
@@ -977,8 +682,6 @@
 
             </div>
 
-
-
             <div class="info-row">
 
               <div class="info-title">
@@ -990,8 +693,6 @@
               </div>
 
             </div>
-
-
 
             <div class="info-row">
 
@@ -1015,8 +716,6 @@
 
             </div>
 
-
-
             <div class="info-row">
 
               <div class="info-title">
@@ -1038,8 +737,6 @@
               </div>
 
             </div>
-
-
 
             <div class="info-row">
 
@@ -1063,8 +760,6 @@
 
             </div>
 
-
-
             <div class="info-row">
 
               <div class="info-title">
@@ -1077,33 +772,23 @@
 
             </div>
 
-
           </div>
-
 
         </section>
 
-
-
-        <!-- =====================================================
-             OFFICIAL LINKS
-        ====================================================== -->
+        <!-- OFFICIAL LINKS -->
 
         <section class="profile-section">
-
 
           <p class="section-label">
             OFFICIAL LINKS
           </p>
 
-
           <h2>
             官方連結
           </h2>
 
-
           <div class="platform-links">
-
 
             <a
               href="https://www.youtube.com/@setsuna_wague"
@@ -1115,8 +800,6 @@
               <i class="fa-brands fa-youtube"></i>
             </a>
 
-
-
             <a
               href="https://www.twitch.tv/setsuna_wague"
               target="_blank"
@@ -1126,8 +809,6 @@
             >
               <i class="fa-brands fa-twitch"></i>
             </a>
-
-
 
             <a
               href="https://x.com/SETSUNA_VII"
@@ -1139,8 +820,6 @@
               <i class="fa-brands fa-x-twitter"></i>
             </a>
 
-
-
             <a
               href="https://discord.com/invite/Y9v7zZbhNj"
               target="_blank"
@@ -1151,33 +830,23 @@
               <i class="fa-brands fa-discord"></i>
             </a>
 
-
           </div>
-
 
         </section>
 
-
-
-        <!-- =====================================================
-             SELECTED MILESTONES
-        ====================================================== -->
+        <!-- SELECTED MILESTONES -->
 
         <section class="profile-section">
-
 
           <p class="section-label">
             SELECTED MILESTONES
           </p>
 
-
           <h2>
             重要里程碑
           </h2>
 
-
           <div class="milestone-list">
-
 
             <div class="milestone-item">
 
@@ -1191,8 +860,6 @@
 
             </div>
 
-
-
             <div class="milestone-item">
 
               <div class="milestone-date">
@@ -1204,8 +871,6 @@
               </div>
 
             </div>
-
-
 
             <div class="milestone-item">
 
@@ -1219,8 +884,6 @@
 
             </div>
 
-
-
             <div class="milestone-item">
 
               <div class="milestone-date">
@@ -1232,8 +895,6 @@
               </div>
 
             </div>
-
-
 
             <div class="milestone-item">
 
@@ -1247,8 +908,6 @@
 
             </div>
 
-
-
             <div class="milestone-item">
 
               <div class="milestone-date">
@@ -1260,8 +919,6 @@
               </div>
 
             </div>
-
-
 
             <div class="milestone-item">
 
@@ -1275,8 +932,6 @@
 
             </div>
 
-
-
             <div class="milestone-item">
 
               <div class="milestone-date">
@@ -1288,8 +943,6 @@
               </div>
 
             </div>
-
-
 
             <div class="milestone-item">
 
@@ -1303,8 +956,6 @@
 
             </div>
 
-
-
             <div class="milestone-item">
 
               <div class="milestone-date">
@@ -1316,8 +967,6 @@
               </div>
 
             </div>
-
-
 
             <div class="milestone-item">
 
@@ -1331,8 +980,6 @@
 
             </div>
 
-
-
             <div class="milestone-item">
 
               <div class="milestone-date">
@@ -1345,20 +992,15 @@
 
             </div>
 
-
           </div>
 
-
         </section>
-
 
       </div>
 
     </div>
 
-
   </main>
-
 
 </body>
 
