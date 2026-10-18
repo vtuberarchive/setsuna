@@ -28,10 +28,7 @@
       font: inherit;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
-
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -80,10 +77,6 @@
       color: #ff7aa8;
     }
 
-    /* =========================
-       MAIN
-    ========================= */
-
     main {
       width: 100%;
       max-width: 1200px;
@@ -91,12 +84,9 @@
       padding: 80px 24px 100px;
     }
 
-    /* =========================
-       HERO
-    ========================= */
-
+    /* HERO */
     .search-hero {
-      margin-bottom: 48px;
+      margin-bottom: 52px;
     }
 
     .search-hero h1 {
@@ -112,22 +102,23 @@
 
     .search-intro {
       margin: 24px 0 0;
-      max-width: 760px;
+      max-width: 720px;
       color: #c5cad3;
       font-size: 17px;
       line-height: 1.9;
     }
 
-    /* =========================
-       SEARCH BOX
-    ========================= */
-
-    .search-panel {
+    /* SEARCH */
+    .search-wrap {
       margin-bottom: 44px;
-      padding: 28px;
-      background: #151820;
-      border: 1px solid #242936;
-      border-radius: 18px;
+    }
+
+    .search-label {
+      margin-bottom: 12px;
+      color: #858b98;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
     .search-row {
@@ -137,52 +128,51 @@
 
     .search-box {
       width: 100%;
-      padding: 16px 18px;
-      color: #f5f5f5;
-      background: #0d0f14;
-      border: 1px solid #343a49;
-      border-radius: 12px;
+      padding: 15px 18px;
+      border: 1px solid #343946;
+      border-radius: 14px;
       outline: none;
+      background: #151820;
+      color: #f5f5f5;
       transition: 0.2s ease;
     }
 
     .search-box::placeholder {
-      color: #737b89;
+      color: #6f7684;
     }
 
     .search-box:focus {
       border-color: #ff7aa8;
-      box-shadow: 0 0 0 3px rgba(255, 122, 168, 0.12);
+      box-shadow: 0 0 0 3px rgba(255, 122, 168, 0.08);
     }
 
     .clear-button {
       flex-shrink: 0;
-      padding: 0 22px;
-      color: #c5cad3;
-      background: #20242d;
-      border: 1px solid #343a49;
-      border-radius: 12px;
+      padding: 10px 20px;
+      border: 1px solid #ff7aa8;
+      border-radius: 999px;
+      background: transparent;
+      color: #ff7aa8;
+      font-size: 14px;
+      font-weight: 700;
       cursor: pointer;
       transition: 0.2s ease;
     }
 
     .clear-button:hover {
-      color: #ffffff;
-      border-color: #ff7aa8;
+      background: #ff7aa8;
+      color: #0d0f14;
     }
 
     .search-help {
-      margin: 14px 2px 0;
-      color: #808795;
+      margin: 12px 0 0;
+      color: #858b98;
       font-size: 13px;
       line-height: 1.7;
     }
 
-    /* =========================
-       RESULT TITLE
-    ========================= */
-
-    .result-header {
+    /* SECTION TITLE */
+    .section-title {
       display: flex;
       align-items: end;
       justify-content: space-between;
@@ -190,62 +180,47 @@
       margin-bottom: 20px;
     }
 
-    .result-header h2 {
+    .section-title h2 {
       margin: 0;
       font-size: 28px;
     }
 
-    .result-status {
-      color: #8f96a3;
+    .section-title p {
+      margin: 0;
+      color: #858b98;
       font-size: 14px;
     }
 
-    /* =========================
-       EMPTY / START
-    ========================= */
-
-    .message-box {
-      padding: 42px 28px;
-      text-align: center;
-      color: #8f96a3;
-      background: #151820;
-      border: 1px solid #242936;
-      border-radius: 18px;
-      line-height: 1.8;
-    }
-
-    .message-box strong {
-      color: #f5f5f5;
-    }
-
-    /* =========================
-       RESULTS
-    ========================= */
-
+    /* RESULTS */
     .results {
       display: grid;
-      gap: 14px;
+      gap: 18px;
     }
 
-    .song-card {
+    .result-card {
       display: grid;
-      grid-template-columns: minmax(220px, 1.4fr) minmax(180px, 1fr) minmax(190px, 1fr);
-      gap: 24px;
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(220px, 0.9fr)
+        180px;
       align-items: center;
-      padding: 22px 24px;
+      gap: 24px;
+      padding: 24px 28px;
+
       background: #151820;
       border: 1px solid #242936;
-      border-radius: 16px;
-      transition: 0.2s ease;
+      border-radius: 20px;
+
+      transition: 0.25s ease;
     }
 
-    .song-card:hover {
-      transform: translateY(-2px);
-      border-color: #3a4050;
+    .result-card:hover {
+      border-color: #ff7aa8;
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
     }
 
     .song-name {
-      margin-bottom: 6px;
       color: #f5f5f5;
       font-size: 18px;
       font-weight: 700;
@@ -253,82 +228,112 @@
     }
 
     .song-original {
-      color: #989fac;
-      font-size: 14px;
-      line-height: 1.6;
+      margin-top: 5px;
+      color: #9298a5;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
-    .note-tag {
+    .song-note {
       display: inline-block;
       margin-top: 9px;
-      padding: 4px 8px;
-      color: #ffd1df;
-      background: #512537;
+      padding: 3px 7px;
       border-radius: 6px;
+      background: #512537;
+      color: #ffd1df;
       font-size: 11px;
-      font-weight: 600;
-    }
-
-    .stream-meta {
-      color: #aeb4c2;
-      font-size: 14px;
-      line-height: 1.7;
     }
 
     .stream-date {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       color: #ff7aa8;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
 
     .stream-title {
       color: #c5cad3;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    .time-links {
-      text-align: right;
-    }
-
-    .time-links a {
-      display: inline-block;
-      margin: 3px 0;
-      color: #f5f5f5;
+    .song-time {
+      color: #ff9bbc;
       font-size: 14px;
       font-weight: 700;
-      transition: 0.2s ease;
+      text-align: right;
+      white-space: nowrap;
     }
 
-    .time-links a:hover {
+    .song-time a {
+      display: inline-block;
+      margin: 2px 0;
+    }
+
+    .song-time a:hover {
       color: #ff7aa8;
     }
 
-    .no-video {
-      color: #737b89;
-      font-size: 13px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 34px 20px;
-      border-top: 1px solid #242833;
-      color: #747b89;
+    .empty {
+      padding: 40px 28px;
       text-align: center;
-      font-size: 13px;
+      color: #888f9c;
+      background: #151820;
+      border: 1px solid #242936;
+      border-radius: 20px;
+      line-height: 1.8;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    .empty strong {
+      color: #f5f5f5;
+    }
 
+    /* PAGINATION */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 34px;
+    }
+
+    .pagination:empty {
+      display: none;
+    }
+
+    .page-button {
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid #343946;
+      border-radius: 10px;
+      background: #151820;
+      color: #c8ccd5;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .page-button:hover,
+    .page-button.active {
+      border-color: #ff7aa8;
+      color: #ff7aa8;
+    }
+
+    .page-button:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .page-button:disabled:hover {
+      border-color: #343946;
+      color: #c8ccd5;
+    }
+
+    /* MOBILE */
     @media (max-width: 760px) {
-      .nav {
-        align-items: flex-start;
-      }
-
       .nav-links {
         gap: 12px;
         flex-wrap: wrap;
@@ -339,33 +344,31 @@
         padding: 50px 20px 70px;
       }
 
-      .search-hero {
-        margin-bottom: 36px;
-      }
-
       .search-row {
         flex-direction: column;
       }
 
       .clear-button {
-        padding: 14px 18px;
+        padding: 12px 18px;
       }
 
-      .result-header {
+      .section-title {
         display: block;
       }
 
-      .result-status {
+      .section-title p {
         margin-top: 8px;
       }
 
-      .song-card {
+      .result-card {
         grid-template-columns: 1fr;
         gap: 16px;
+        padding: 24px;
       }
 
-      .time-links {
+      .song-time {
         text-align: left;
+        white-space: normal;
       }
     }
   </style>
@@ -395,7 +398,6 @@
   <main>
 
     <!-- HERO -->
-
     <section class="search-hero">
 
       <h1>
@@ -409,9 +411,13 @@
 
     </section>
 
-    <!-- SEARCH -->
 
-    <section class="search-panel">
+    <!-- SEARCH -->
+    <section class="search-wrap">
+
+      <div class="search-label">
+        SEARCH
+      </div>
 
       <div class="search-row">
 
@@ -434,104 +440,145 @@
       </div>
 
       <p class="search-help">
-        不輸入關鍵字時不會顯示全部歌曲。輸入內容後會即時搜尋目前收錄的演唱紀錄。
+        輸入關鍵字後才會顯示搜尋結果，不會一次載出全部演唱紀錄。
       </p>
 
     </section>
 
+
     <!-- RESULTS -->
+    <section id="resultSection">
 
-    <section>
-
-      <div class="result-header">
+      <div class="section-title">
 
         <h2>搜尋結果</h2>
 
-        <div
-          id="resultStatus"
-          class="result-status"
-        >
+        <p id="resultStatus">
           請輸入關鍵字
-        </div>
+        </p>
 
       </div>
 
       <div
-        id="songResults"
         class="results"
+        id="songResults"
       >
 
-        <div class="message-box">
+        <div class="empty">
           輸入<strong>歌名、原唱、日期或歌回名稱</strong>開始搜尋。
         </div>
 
       </div>
 
+      <div
+        class="pagination"
+        id="pagination"
+      ></div>
+
     </section>
 
   </main>
 
-  <footer>
-    VTuber Archive · SETSUNA Unofficial Fan Project
-  </footer>
-
-  <!-- 共用資料 -->
 
   <script src="streams-data.js"></script>
   <script src="songs-data.js"></script>
 
   <script>
 
-    // =========================
-    // 取得資料
-    // =========================
+    // ============================================================
+    // 共用資料
+    // ============================================================
 
-    const streams = window.SETSUNA_DATA?.streams || [];
-    const songs = window.SETSUNA_DATA?.songs || [];
+    const sourceData =
+      window.SETSUNA_DATA || {
+        streams: [],
+        songs: []
+      };
 
-    const searchInput = document.getElementById("searchInput");
-    const clearButton = document.getElementById("clearButton");
-    const songResults = document.getElementById("songResults");
-    const resultStatus = document.getElementById("resultStatus");
+    const streams =
+      Array.isArray(sourceData.streams)
+        ? sourceData.streams.map(stream => ({
+            ...stream,
+            title:
+              stream.fullTitle ||
+              stream.title ||
+              stream.shortTitle
+          }))
+        : [];
+
+    const songs =
+      Array.isArray(sourceData.songs)
+        ? sourceData.songs
+        : [];
 
 
-    // =========================
-    // 建立歌回索引
-    // =========================
-
-    const streamMap = new Map(
-      streams.map(stream => [
-        stream.id,
-        stream
-      ])
-    );
+    const streamMap =
+      new Map(
+        streams.map(stream => [
+          stream.id,
+          stream
+        ])
+      );
 
 
-    // =========================
-    // 文字標準化
-    // =========================
+    // 每頁顯示 20 筆搜尋結果
+    const PAGE_SIZE = 20;
+
+    let currentPage = 1;
+    let currentResults = [];
+
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const clearButton =
+      document.getElementById("clearButton");
+
+    const songResults =
+      document.getElementById("songResults");
+
+    const resultStatus =
+      document.getElementById("resultStatus");
+
+    const pagination =
+      document.getElementById("pagination");
+
+
+    // ============================================================
+    // 工具：安全輸出 HTML
+    // ============================================================
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+
+    // ============================================================
+    // 工具：搜尋文字標準化
+    // ============================================================
 
     function normalizeText(value) {
-      return String(value || "")
+      return String(value ?? "")
         .normalize("NFKC")
         .toLowerCase()
         .trim();
     }
 
 
-    // =========================
-    // 時間轉秒數
-    // =========================
+    // ============================================================
+    // HH:MM:SS → 秒數
+    // ============================================================
 
     function timeToSeconds(time) {
-
-      if (!time) {
-        return 0;
-      }
-
-      const parts = time
-        .split(":")
-        .map(Number);
+      const parts =
+        String(time || "")
+          .split(":")
+          .map(Number);
 
       if (parts.length === 3) {
         return (
@@ -548,13 +595,9 @@
         );
       }
 
-      return 0;
+      return Number(parts[0]) || 0;
     }
 
-
-    // =========================
-    // 日期顯示格式
-    // =========================
 
     function formatDate(date) {
       return String(date || "")
@@ -562,236 +605,373 @@
     }
 
 
-    // =========================
-    // 安全輸出文字
-    // =========================
-
-    function escapeHTML(value) {
-
-      return String(value || "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-
-    // =========================
+    // ============================================================
     // 搜尋
-    // =========================
+    // ============================================================
 
-    function renderSearch() {
+    function performSearch() {
 
-      const query = normalizeText(
-        searchInput.value
-      );
+      const rawQuery =
+        searchInput.value.trim();
 
-      // 空白時不顯示全部資料
+      const query =
+        normalizeText(rawQuery);
+
+
       if (!query) {
+
+        currentResults = [];
+        currentPage = 1;
 
         resultStatus.textContent =
           "請輸入關鍵字";
 
         songResults.innerHTML = `
-          <div class="message-box">
+          <div class="empty">
             輸入<strong>歌名、原唱、日期或歌回名稱</strong>開始搜尋。
           </div>
         `;
 
-        return;
-      }
-
-
-      // 支援空格分開多個關鍵字
-      const keywords = query
-        .split(/\s+/)
-        .filter(Boolean);
-
-
-      const filtered = songs.filter(item => {
-
-        const stream =
-          streamMap.get(item.streamId);
-
-        if (!stream) {
-          return false;
-        }
-
-        const searchableText = normalizeText([
-          item.song,
-          item.original,
-          item.note,
-          stream.date,
-          stream.shortTitle,
-          stream.fullTitle
-        ].join(" "));
-
-        return keywords.every(keyword =>
-          searchableText.includes(keyword)
-        );
-
-      });
-
-
-      // 最新日期優先
-      filtered.sort((a, b) => {
-
-        const streamA =
-          streamMap.get(a.streamId);
-
-        const streamB =
-          streamMap.get(b.streamId);
-
-        return String(streamB?.date || "")
-          .localeCompare(
-            String(streamA?.date || "")
-          );
-
-      });
-
-
-      resultStatus.textContent =
-        `找到 ${filtered.length} 筆演唱紀錄`;
-
-
-      if (filtered.length === 0) {
-
-        songResults.innerHTML = `
-          <div class="message-box">
-            找不到符合
-            <strong>${escapeHTML(searchInput.value)}</strong>
-            的演唱紀錄。
-          </div>
-        `;
+        pagination.innerHTML = "";
 
         return;
       }
 
 
-      songResults.innerHTML =
-        filtered.map(item => {
-
-          const stream =
-            streamMap.get(item.streamId);
-
-          const songName =
-            escapeHTML(item.song);
-
-          const original =
-            item.original
-              ? escapeHTML(item.original)
-              : "原唱資料待補";
-
-          const note =
-            item.note
-              ? `
-                <div class="note-tag">
-                  ${escapeHTML(item.note)}
-                </div>
-              `
-              : "";
+      const keywords =
+        query
+          .split(/\s+/)
+          .filter(Boolean);
 
 
-          const timeLinks =
-            (item.parts || [])
-              .map(part => {
+      currentResults =
+        songs
+          .filter(item => {
 
-                const label =
-                  part.label
-                    ? `${escapeHTML(part.label)} `
-                    : "";
+            const stream =
+              streamMap.get(item.streamId);
 
-                const time =
-                  escapeHTML(part.time);
-
-                if (!stream.videoId) {
-
-                  return `
-                    <div class="no-video">
-                      ${label}${time}
-                    </div>
-                  `;
-
-                }
-
-                const seconds =
-                  timeToSeconds(part.time);
-
-                const url =
-                  `https://www.youtube.com/watch?v=${encodeURIComponent(stream.videoId)}&t=${seconds}s`;
-
-                return `
-                  <a
-                    href="${url}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ${label}${time} ▶
-                  </a>
-                `;
-
-              })
-              .join("<br>");
+            if (!stream) {
+              return false;
+            }
 
 
-          return `
-            <article class="song-card">
-
-              <div>
-
-                <div class="song-name">
-                  ${songName}
-                </div>
-
-                <div class="song-original">
-                  ${original}
-                </div>
-
-                ${note}
-
-              </div>
+            const searchable =
+              normalizeText([
+                item.song,
+                item.original,
+                item.note,
+                stream.date,
+                stream.shortTitle,
+                stream.title
+              ].join(" "));
 
 
-              <div class="stream-meta">
+            return keywords.every(keyword =>
+              searchable.includes(keyword)
+            );
 
-                <div class="stream-date">
-                  ${formatDate(stream.date)}
-                </div>
+          })
+          .sort((a, b) => {
 
-                <div class="stream-title">
-                  ${escapeHTML(stream.shortTitle)}
-                </div>
+            const streamA =
+              streamMap.get(a.streamId);
 
-              </div>
+            const streamB =
+              streamMap.get(b.streamId);
 
 
-              <div class="time-links">
-                ${timeLinks}
-              </div>
+            const dateCompare =
+              String(streamB?.date || "")
+                .localeCompare(
+                  String(streamA?.date || "")
+                );
 
-            </article>
-          `;
 
-        })
-        .join("");
+            if (dateCompare !== 0) {
+              return dateCompare;
+            }
+
+
+            const timeA =
+              a.parts?.[0]?.time || "";
+
+            const timeB =
+              b.parts?.[0]?.time || "";
+
+
+            return timeA.localeCompare(timeB);
+
+          });
+
+
+      currentPage = 1;
+
+      renderResults(rawQuery);
 
     }
 
 
-    // =========================
-    // 即時搜尋
-    // =========================
+    // ============================================================
+    // 顯示搜尋結果
+    // ============================================================
+
+    function renderResults(rawQuery) {
+
+      const totalPages =
+        Math.max(
+          1,
+          Math.ceil(
+            currentResults.length /
+            PAGE_SIZE
+          )
+        );
+
+
+      if (currentPage > totalPages) {
+        currentPage = totalPages;
+      }
+
+
+      resultStatus.textContent =
+        currentResults.length
+          ? `找到 ${currentResults.length} 筆演唱紀錄`
+          : "找不到符合的演唱紀錄";
+
+
+      if (currentResults.length === 0) {
+
+        songResults.innerHTML = `
+          <div class="empty">
+            找不到符合
+            <strong>${escapeHtml(rawQuery)}</strong>
+            的演唱紀錄。
+          </div>
+        `;
+
+        pagination.innerHTML = "";
+
+        return;
+      }
+
+
+      const start =
+        (currentPage - 1) *
+        PAGE_SIZE;
+
+
+      const pageItems =
+        currentResults.slice(
+          start,
+          start + PAGE_SIZE
+        );
+
+
+      songResults.innerHTML =
+        pageItems
+          .map(buildResultCard)
+          .join("");
+
+
+      renderPagination(totalPages);
+
+    }
+
+
+    // ============================================================
+    // 建立結果卡片
+    // ============================================================
+
+    function buildResultCard(item) {
+
+      const stream =
+        streamMap.get(item.streamId);
+
+      if (!stream) {
+        return "";
+      }
+
+
+      const original =
+        String(item.original || "").trim()
+          ? `
+            <div class="song-original">
+              原唱：${escapeHtml(item.original)}
+            </div>
+          `
+          : "";
+
+
+      const note =
+        String(item.note || "").trim()
+          ? `
+            <span class="song-note">
+              ${escapeHtml(item.note)}
+            </span>
+          `
+          : "";
+
+
+      const hasVideo =
+        Boolean(
+          String(stream.videoId || "")
+            .trim()
+        );
+
+
+      const timeLinks =
+        (item.parts || [])
+          .map(part => {
+
+            const label =
+              part.label
+                ? `${escapeHtml(part.label)} `
+                : "";
+
+            const displayTime =
+              `${label}${escapeHtml(part.time)}`;
+
+
+            if (!hasVideo) {
+              return `<span>${displayTime}</span>`;
+            }
+
+
+            const seconds =
+              timeToSeconds(
+                part.time
+              );
+
+
+            return `
+              <a
+                href="https://www.youtube.com/watch?v=${encodeURIComponent(stream.videoId)}&t=${seconds}s"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ${displayTime} ▶
+              </a>
+            `;
+
+          })
+          .join("<br>");
+
+
+      return `
+        <article class="result-card">
+
+          <div>
+
+            <div class="song-name">
+              ${escapeHtml(item.song)}
+            </div>
+
+            ${original}
+
+            ${note}
+
+          </div>
+
+
+          <div>
+
+            <div class="stream-date">
+              ${formatDate(stream.date)}
+            </div>
+
+            <div
+              class="stream-title"
+              title="${escapeHtml(stream.title)}"
+            >
+              ${escapeHtml(stream.shortTitle)}
+            </div>
+
+          </div>
+
+
+          <div class="song-time">
+            ${timeLinks}
+          </div>
+
+        </article>
+      `;
+
+    }
+
+
+    // ============================================================
+    // 分頁
+    // ============================================================
+
+    function renderPagination(totalPages) {
+
+      if (totalPages <= 1) {
+        pagination.innerHTML = "";
+        return;
+      }
+
+
+      let html = `
+        <button
+          class="page-button"
+          type="button"
+          data-page="prev"
+          ${currentPage === 1 ? "disabled" : ""}
+        >
+          ← 上一頁
+        </button>
+      `;
+
+
+      for (
+        let page = 1;
+        page <= totalPages;
+        page += 1
+      ) {
+
+        html += `
+          <button
+            class="page-button ${currentPage === page ? "active" : ""}"
+            type="button"
+            data-page="${page}"
+          >
+            ${page}
+          </button>
+        `;
+
+      }
+
+
+      html += `
+        <button
+          class="page-button"
+          type="button"
+          data-page="next"
+          ${currentPage === totalPages ? "disabled" : ""}
+        >
+          下一頁 →
+        </button>
+      `;
+
+
+      pagination.innerHTML = html;
+
+    }
+
+
+    // ============================================================
+    // 輸入即時搜尋
+    // ============================================================
 
     searchInput.addEventListener(
       "input",
-      renderSearch
+      performSearch
     );
 
 
-    // =========================
-    // 清除搜尋
-    // =========================
+    // ============================================================
+    // 清除
+    // ============================================================
 
     clearButton.addEventListener(
       "click",
@@ -799,9 +979,88 @@
 
         searchInput.value = "";
 
-        renderSearch();
+        performSearch();
 
         searchInput.focus();
+
+      }
+    );
+
+
+    // ============================================================
+    // 分頁切換
+    // ============================================================
+
+    pagination.addEventListener(
+      "click",
+      event => {
+
+        const button =
+          event.target.closest(
+            "[data-page]"
+          );
+
+        if (
+          !button ||
+          button.disabled
+        ) {
+          return;
+        }
+
+
+        const totalPages =
+          Math.max(
+            1,
+            Math.ceil(
+              currentResults.length /
+              PAGE_SIZE
+            )
+          );
+
+
+        const target =
+          button.dataset.page;
+
+
+        if (target === "prev") {
+
+          currentPage =
+            Math.max(
+              1,
+              currentPage - 1
+            );
+
+        } else if (
+          target === "next"
+        ) {
+
+          currentPage =
+            Math.min(
+              totalPages,
+              currentPage + 1
+            );
+
+        } else {
+
+          currentPage =
+            Number(target);
+
+        }
+
+
+        renderResults(
+          searchInput.value.trim()
+        );
+
+
+        document
+          .getElementById(
+            "resultSection"
+          )
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
 
       }
     );
