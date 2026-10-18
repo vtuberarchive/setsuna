@@ -546,54 +546,65 @@
           : "";
 
 
-      return `
-        <article class="music-card">
+return `
+  <article class="music-card">
 
-          <a
-            class="music-thumbnail-link"
-            href="${youtubeUrl}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="music-thumbnail"
-              src="https://img.youtube.com/vi/${encodeURIComponent(item.videoId)}/hqdefault.jpg"
-              alt="${escapeHtml(item.title)}"
-            >
-          </a>
+    <a
+      class="music-thumbnail-link"
+      href="${youtubeUrl}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="music-thumbnail"
+        src="https://img.youtube.com/vi/${encodeURIComponent(item.videoId)}/hqdefault.jpg"
+        alt="${escapeHtml(item.title)}"
+      >
+    </a>
 
 
-          <div class="music-info">
+    <div class="music-info">
 
-            <div class="music-heading">
- 
-              <h3 class="music-title">
-              ${escapeHtml(item.title)}
-              </h3>
+      <div class="music-date">
+        ${formatDate(item.releaseDate)}
+      </div>
 
-              ${originalArtist}
 
-            </div>
+      <div class="music-heading">
 
-            <div class="music-actions">
+        <h3 class="music-title">
+          ${escapeHtml(item.title)}
+        </h3>
 
-              <a
-                class="music-button"
-                href="${youtubeUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                前往 YouTube
-              </a>
+        ${originalArtist}
 
-              ${originalButton}
+      </div>
 
-            </div>
 
-          </div>
+      <div class="credit-list">
+        ${creditRows.join("")}
+      </div>
 
-        </article>
-      `;
+
+      <div class="music-actions">
+
+        <a
+          class="music-button"
+          href="${youtubeUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          前往 YouTube
+        </a>
+
+        ${originalButton}
+
+      </div>
+
+    </div>
+
+  </article>
+`;
     }
 
 
