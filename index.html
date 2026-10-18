@@ -23,6 +23,7 @@
       text-decoration: none;
     }
 
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -71,6 +72,7 @@
       color: #ff7aa8;
     }
 
+    /* HERO */
     .hero {
       width: 100%;
       max-width: 1200px;
@@ -104,6 +106,7 @@
       margin-top: 30px;
     }
 
+    /* BUTTON */
     .button {
       display: inline-block;
       padding: 12px 20px;
@@ -132,6 +135,7 @@
       color: #ff7aa8;
     }
 
+    /* MAIN */
     main {
       width: 100%;
       max-width: 1200px;
@@ -162,6 +166,7 @@
       font-size: 14px;
     }
 
+    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -186,40 +191,7 @@
       font-size: 14px;
     }
 
-    .music-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .music-box {
-      min-height: 190px;
-      padding: 28px;
-      background:
-        linear-gradient(135deg, rgba(255, 122, 168, 0.16), transparent),
-        #151820;
-      border: 1px solid #242936;
-      border-radius: 20px;
-      transition: 0.2s ease;
-    }
-
-    .music-box:hover {
-      border-color: #ff7aa8;
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .music-box h3 {
-      margin: 0 0 12px;
-      font-size: 25px;
-    }
-
-    .music-box p {
-      margin: 0;
-      color: #9298a5;
-      line-height: 1.8;
-    }
-
+    /* LATEST CARDS */
     .latest-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -265,10 +237,18 @@
       line-height: 1.5;
     }
 
+    /* HOME MUSIC */
+    .music-preview-original {
+      margin-top: 8px;
+      color: #9298a5;
+      font-size: 13px;
+    }
+
     .stream-more {
       margin-top: 20px;
     }
 
+    /* EMPTY */
     .empty {
       padding: 34px;
       color: #888f9c;
@@ -278,6 +258,7 @@
       border-radius: 18px;
     }
 
+    /* ABOUT */
     .about-box {
       padding: 28px;
       background: #151820;
@@ -295,6 +276,7 @@
       margin-bottom: 0;
     }
 
+    /* FOOTER */
     footer {
       padding: 34px 20px;
       border-top: 1px solid #242833;
@@ -303,12 +285,14 @@
       font-size: 13px;
     }
 
+    /* TABLET */
     @media (max-width: 860px) {
       .latest-grid {
         grid-template-columns: 1fr;
       }
     }
 
+    /* MOBILE */
     @media (max-width: 760px) {
       .nav-links {
         gap: 12px;
@@ -320,8 +304,7 @@
         padding-top: 60px;
       }
 
-      .stats,
-      .music-grid {
+      .stats {
         grid-template-columns: 1fr;
       }
 
@@ -332,18 +315,13 @@
       .section-title p {
         margin-top: 8px;
       }
-
-      .music-preview-original {
-        margin-top: 8px;
-        color: #9298a5;
-        font-size: 13px;
-      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="nav">
 
@@ -356,6 +334,7 @@
         <a href="profile.html">PROFILE</a>
         <a href="streams.html">STREAMS</a>
         <a href="search.html">SONG SEARCH</a>
+        <a href="music.html">MUSIC</a>
         <a href="#merch">MERCH</a>
         <a href="#about">ABOUT</a>
       </nav>
@@ -363,6 +342,8 @@
     </div>
   </header>
 
+
+  <!-- HERO -->
   <section class="hero">
 
     <h1>
@@ -377,17 +358,24 @@
 
     <div class="hero-actions">
 
-      <a class="button secondary" href="profile.html">
+      <a
+        class="button secondary"
+        href="profile.html"
+      >
         查看 PROFILE
       </a>
 
-      <a class="button secondary" href="streams.html">
+      <a
+        class="button secondary"
+        href="streams.html"
+      >
         前往 STREAMS
       </a>
 
     </div>
 
   </section>
+
 
   <main>
 
@@ -402,70 +390,140 @@
       <div class="stats">
 
         <div class="stat-card">
-          <div class="stat-number" id="streamCount">—</div>
-          <div class="stat-label">收錄歌回</div>
+          <div
+            class="stat-number"
+            id="streamCount"
+          >
+            —
+          </div>
+
+          <div class="stat-label">
+            收錄歌回
+          </div>
         </div>
 
-        <div class="stat-card">
-          <div class="stat-number" id="performanceCount">—</div>
-          <div class="stat-label">演唱紀錄</div>
-        </div>
 
         <div class="stat-card">
-          <div class="stat-number" id="uniqueSongCount">—</div>
-          <div class="stat-label">不重複歌曲</div>
+          <div
+            class="stat-number"
+            id="performanceCount"
+          >
+            —
+          </div>
+
+          <div class="stat-label">
+            演唱紀錄
+          </div>
+        </div>
+
+
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            id="uniqueSongCount"
+          >
+            —
+          </div>
+
+          <div class="stat-label">
+            不重複歌曲
+          </div>
         </div>
 
       </div>
 
     </section>
 
-   <!-- MUSIC -->
-<section class="section" id="music">
 
-  <div class="section-title">
-    <h2>Music</h2>
-    <p>正式音樂作品</p>
-  </div>
+    <!-- MUSIC -->
+    <section
+      class="section"
+      id="music"
+    >
 
-  <div
-    class="latest-grid"
-    id="latestMusic"
-  ></div>
+      <div class="section-title">
 
-  <div class="stream-more">
-    <a class="button secondary" href="music.html">
-      查看全部 MUSIC
-    </a>
-  </div>
+        <h2>Music</h2>
 
-</section>
+        <p>
+          正式音樂作品
+        </p>
+
+      </div>
+
+
+      <div
+        class="latest-grid"
+        id="latestMusic"
+      ></div>
+
+
+      <div class="stream-more">
+
+        <a
+          class="button secondary"
+          href="music.html"
+        >
+          查看全部 MUSIC
+        </a>
+
+      </div>
+
+    </section>
+
 
     <!-- LATEST STREAMS -->
     <section class="section">
 
       <div class="section-title">
-        <h2>Latest Singing Streams</h2>
-        <p>近期收錄歌回</p>
+
+        <h2>
+          Latest Singing Streams
+        </h2>
+
+        <p>
+          近期收錄歌回
+        </p>
+
       </div>
 
-      <div class="latest-grid" id="latestStreams"></div>
+
+      <div
+        class="latest-grid"
+        id="latestStreams"
+      ></div>
+
 
       <div class="stream-more">
-        <a class="button secondary" href="streams.html">
+
+        <a
+          class="button secondary"
+          href="streams.html"
+        >
           查看全部 STREAMS
         </a>
+
       </div>
 
     </section>
 
+
     <!-- MERCH -->
-    <section class="section" id="merch">
+    <section
+      class="section"
+      id="merch"
+    >
 
       <div class="section-title">
+
         <h2>Merch</h2>
-        <p>周邊資料</p>
+
+        <p>
+          周邊資料
+        </p>
+
       </div>
+
 
       <div class="empty">
         周邊資料整理中
@@ -473,12 +531,17 @@
 
     </section>
 
+
     <!-- ABOUT -->
-    <section class="section" id="about">
+    <section
+      class="section"
+      id="about"
+    >
 
       <div class="section-title">
         <h2>About</h2>
       </div>
+
 
       <div class="about-box">
 
@@ -498,194 +561,334 @@
 
   </main>
 
+
   <footer>
     VTuber Archive · SETSUNA Unofficial Fan Project
   </footer>
 
 
+  <!-- DATA -->
   <script src="streams-data.js"></script>
   <script src="songs-data.js"></script>
   <script src="data/music-data.js"></script>
-  
+
+
   <script>
-    const data = window.SETSUNA_DATA || { streams: [], songs: [] };
-    const streams = Array.isArray(data.streams) ? data.streams : [];
-    const songs = Array.isArray(data.songs) ? data.songs : [];
 
+    // ============================================================
+    // 共用資料
+    // ============================================================
+
+    const data =
+      window.SETSUNA_DATA || {
+        streams: [],
+        songs: []
+      };
+
+    const streams =
+      Array.isArray(data.streams)
+        ? data.streams
+        : [];
+
+    const songs =
+      Array.isArray(data.songs)
+        ? data.songs
+        : [];
+
+
+    const musicData =
+      Array.isArray(window.SETSUNA_MUSIC)
+        ? window.SETSUNA_MUSIC
+        : [];
+
+
+    // ============================================================
     // 自動統計
-    document.getElementById("streamCount").textContent = streams.length;
-    document.getElementById("performanceCount").textContent = songs.length;
+    // ============================================================
 
-    const uniqueSongCount = new Set(
-      songs.map(item =>
-        `${String(item.song || "").trim().toLowerCase()}|${String(item.original || "").trim().toLowerCase()}`
-      )
-    ).size;
+    document
+      .getElementById("streamCount")
+      .textContent =
+      streams.length;
 
-    document.getElementById("uniqueSongCount").textContent = uniqueSongCount;
 
-    // 日期顯示：2026-10-09 → 2026／10／09
+    document
+      .getElementById("performanceCount")
+      .textContent =
+      songs.length;
+
+
+    const uniqueSongCount =
+      new Set(
+        songs.map(item =>
+          `${String(item.song || "")
+            .trim()
+            .toLowerCase()}|${String(item.original || "")
+            .trim()
+            .toLowerCase()}`
+        )
+      ).size;
+
+
+    document
+      .getElementById("uniqueSongCount")
+      .textContent =
+      uniqueSongCount;
+
+
+    // ============================================================
+    // 日期顯示
+    // 2026-10-09 → 2026／10／09
+    // ============================================================
+
     function formatDate(dateString) {
-      return String(dateString || "").replaceAll("-", "／");
+
+      return String(dateString || "")
+        .replaceAll("-", "／");
+
     }
 
-    // 自動抓最新 3 場歌回
-    const latestStreams = [...streams]
-      .sort((a, b) => String(b.date).localeCompare(String(a.date)))
-      .slice(0, 3);
 
-    const latestContainer = document.getElementById("latestStreams");
+    // ============================================================
+    // 最新 3 首正式音樂作品
+    // ============================================================
 
-    if (latestStreams.length === 0) {
-      latestContainer.innerHTML = '<div class="empty">目前尚無歌回資料</div>';
+    const latestMusic =
+      [...musicData]
+        .sort((a, b) =>
+          String(b.releaseDate || "")
+            .localeCompare(
+              String(a.releaseDate || "")
+            )
+        )
+        .slice(0, 3);
+
+
+    const latestMusicContainer =
+      document.getElementById(
+        "latestMusic"
+      );
+
+
+    if (latestMusic.length === 0) {
+
+      latestMusicContainer.innerHTML = `
+        <div class="empty">
+          目前尚未收錄正式音樂作品。
+        </div>
+      `;
+
     } else {
-      latestStreams.forEach(stream => {
-        const card = document.createElement("a");
-        card.className = "stream-card";
-        card.href = `https://www.youtube.com/watch?v=${stream.videoId}`;
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
 
-        const img = document.createElement("img");
-        img.src = `https://img.youtube.com/vi/${stream.videoId}/hqdefault.jpg`;
-        img.alt = stream.shortTitle || "歌回縮圖";
+      latestMusic.forEach(item => {
 
-        const info = document.createElement("div");
-        info.className = "stream-info";
+        const card =
+          document.createElement("a");
 
-        const date = document.createElement("div");
-        date.className = "stream-date";
-        date.textContent = formatDate(stream.date);
+        card.className =
+          "stream-card";
 
-        const title = document.createElement("h3");
-        title.className = "stream-title";
-        title.textContent = stream.shortTitle || stream.fullTitle || "未命名歌回";
+        card.href =
+          `https://www.youtube.com/watch?v=${item.videoId}`;
+
+        card.target =
+          "_blank";
+
+        card.rel =
+          "noopener noreferrer";
+
+
+        const img =
+          document.createElement("img");
+
+        img.src =
+          `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+
+        img.alt =
+          item.title ||
+          "正式音樂作品";
+
+
+        const info =
+          document.createElement("div");
+
+        info.className =
+          "stream-info";
+
+
+        const date =
+          document.createElement("div");
+
+        date.className =
+          "stream-date";
+
+        date.textContent =
+          formatDate(
+            item.releaseDate
+          );
+
+
+        const title =
+          document.createElement("h3");
+
+        title.className =
+          "stream-title";
+
+        title.textContent =
+          item.title ||
+          "未命名作品";
+
+
+        const original =
+          document.createElement("div");
+
+        original.className =
+          "music-preview-original";
+
+
+        if (
+          item.type === "cover" &&
+          item.originalArtist
+        ) {
+
+          original.textContent =
+            `原唱：${item.originalArtist}`;
+
+        } else if (
+          item.type === "original"
+        ) {
+
+          original.textContent =
+            "Original Song";
+
+        }
+
 
         info.appendChild(date);
         info.appendChild(title);
+
+
+        if (original.textContent) {
+          info.appendChild(original);
+        }
+
+
         card.appendChild(img);
         card.appendChild(info);
-        latestContainer.appendChild(card);
+
+        latestMusicContainer
+          .appendChild(card);
+
       });
-    }
 
-    // =========================
-// HOME MUSIC
-// =========================
-
-const musicData = Array.isArray(window.SETSUNA_MUSIC)
-  ? window.SETSUNA_MUSIC
-  : [];
-
-const latestMusic = [...musicData]
-  .sort((a, b) =>
-    String(b.releaseDate || "").localeCompare(
-      String(a.releaseDate || "")
-    )
-  )
-  .slice(0, 3);
-
-const latestMusicContainer =
-  document.getElementById("latestMusic");
-
-
-function formatMusicDate(date) {
-  return String(date || "").replaceAll("-", "／");
-}
-
-
-if (latestMusic.length === 0) {
-
-  latestMusicContainer.innerHTML = `
-    <div class="empty">
-      目前尚未收錄正式音樂作品。
-    </div>
-  `;
-
-} else {
-
-  latestMusic.forEach(item => {
-
-    const card = document.createElement("a");
-
-    card.className = "stream-card";
-
-    card.href =
-      `https://www.youtube.com/watch?v=${item.videoId}`;
-
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
-
-
-    const img = document.createElement("img");
-
-    img.src =
-      `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
-
-    img.alt =
-      item.title || "正式音樂作品";
-
-
-    const info =
-      document.createElement("div");
-
-    info.className =
-      "stream-info";
-
-
-    const date =
-      document.createElement("div");
-
-    date.className =
-      "stream-date";
-
-    date.textContent =
-      formatMusicDate(item.releaseDate);
-
-
-    const title =
-      document.createElement("h3");
-
-    title.className =
-      "stream-title";
-
-    title.textContent =
-      item.title || "未命名作品";
-
-
-    const original =
-      document.createElement("div");
-
-    original.className =
-      "music-preview-original";
-
-    if (item.type === "cover" && item.originalArtist) {
-      original.textContent =
-        `原唱：${item.originalArtist}`;
-    } else if (item.type === "original") {
-      original.textContent =
-        "Original Song";
     }
 
 
-    info.appendChild(date);
-    info.appendChild(title);
+    // ============================================================
+    // 最新 3 場歌回
+    // ============================================================
 
-    if (original.textContent) {
-      info.appendChild(original);
+    const latestStreams =
+      [...streams]
+        .sort((a, b) =>
+          String(b.date || "")
+            .localeCompare(
+              String(a.date || "")
+            )
+        )
+        .slice(0, 3);
+
+
+    const latestStreamsContainer =
+      document.getElementById(
+        "latestStreams"
+      );
+
+
+    if (latestStreams.length === 0) {
+
+      latestStreamsContainer.innerHTML = `
+        <div class="empty">
+          目前尚無歌回資料
+        </div>
+      `;
+
+    } else {
+
+      latestStreams.forEach(stream => {
+
+        const card =
+          document.createElement("a");
+
+        card.className =
+          "stream-card";
+
+        card.href =
+          `https://www.youtube.com/watch?v=${stream.videoId}`;
+
+        card.target =
+          "_blank";
+
+        card.rel =
+          "noopener noreferrer";
+
+
+        const img =
+          document.createElement("img");
+
+        img.src =
+          `https://img.youtube.com/vi/${stream.videoId}/hqdefault.jpg`;
+
+        img.alt =
+          stream.shortTitle ||
+          "歌回縮圖";
+
+
+        const info =
+          document.createElement("div");
+
+        info.className =
+          "stream-info";
+
+
+        const date =
+          document.createElement("div");
+
+        date.className =
+          "stream-date";
+
+        date.textContent =
+          formatDate(
+            stream.date
+          );
+
+
+        const title =
+          document.createElement("h3");
+
+        title.className =
+          "stream-title";
+
+        title.textContent =
+          stream.shortTitle ||
+          stream.fullTitle ||
+          "未命名歌回";
+
+
+        info.appendChild(date);
+        info.appendChild(title);
+
+        card.appendChild(img);
+        card.appendChild(info);
+
+        latestStreamsContainer
+          .appendChild(card);
+
+      });
+
     }
 
-    card.appendChild(img);
-    card.appendChild(info);
-
-    latestMusicContainer.appendChild(card);
-
-  });
-
-}
-    }
-    
-   </script>
+  </script>
 
 </body>
 </html>
