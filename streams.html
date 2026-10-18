@@ -230,6 +230,18 @@
       display: block;
     }
 
+    .stream-thumbnail-placeholder {
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #0d0f14;
+      color: #747b89;
+      text-align: center;
+      font-size: 14px;
+    }
+
     .stream-info {
       padding: 30px;
       display: flex;
@@ -281,6 +293,13 @@
     .stream-toggle-button:hover {
       background: #ff7aa8;
       color: #0d0f14;
+    }
+
+    .stream-link.disabled-link {
+      border-color: #343946;
+      color: #747b89;
+      cursor: default;
+      pointer-events: none;
     }
 
     /* EXPANDED SETLIST */
@@ -632,7 +651,7 @@
 
       const uniqueSongCount = new Set(
         allSongs.map(item =>
-          item.song.toLowerCase() + "|" + item.original.toLowerCase()
+          `${String(item.song || "").trim().toLowerCase()}|${String(item.original || "").trim().toLowerCase()}`
         )
       ).size;
 
@@ -669,14 +688,26 @@
     // 建立單場歌單
     // ------------------------------------------------------------
     function buildSongList(stream) {
+      const hasVideo = Boolean(String(stream.videoId || "").trim());
+
       const rows = stream.songs.map((item, index) => {
         const note = item.note
           ? `<span class="song-note">${escapeHtml(item.note)}</span>`
           : "";
 
+        const original = String(item.original || "").trim()
+          ? `<div class="song-original">原唱：${escapeHtml(item.original)}</div>`
+          : "";
+
         const timeLinks = item.parts.map(part => {
-          const seconds = timeToSeconds(part.time);
           const label = part.label ? `${escapeHtml(part.label)} ` : "";
+          const displayTime = `${label}${escapeHtml(part.time)}`;
+
+          if (!hasVideo) {
+            return `<span>${displayTime}</span>`;
+          }
+
+          const seconds = timeToSeconds(part.time);
 
           return `
             <a
@@ -684,7 +715,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              ${label}${escapeHtml(part.time)} ▶
+              ${displayTime} ▶
             </a>
           `;
         }).join("<br>");
@@ -697,9 +728,7 @@
               <div class="song-name">
                 ${escapeHtml(item.song)}${note}
               </div>
-              <div class="song-original">
-                原唱：${escapeHtml(item.original)}
-              </div>
+              ${original}
             </div>
 
             <div class="song-time">
@@ -726,24 +755,52 @@
     // 建立歌回卡片
     // ------------------------------------------------------------
     function buildStreamCard(stream) {
-      const youtubeUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(stream.videoId)}`;
-      const thumbnailUrl = `https://img.youtube.com/vi/${encodeURIComponent(stream.videoId)}/hqdefault.jpg`;
+      const hasVideo = Boolean(String(stream.videoId || "").trim());
 
-      return `
-        <article class="stream-card" data-stream-card="${escapeHtml(stream.id)}">
-          <div class="stream-main">
+      const media = hasVideo
+        ? `
             <a
               class="thumbnail-link"
-              href="${youtubeUrl}"
+              href="https://www.youtube.com/watch?v=${encodeURIComponent(stream.videoId)}"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 class="stream-thumbnail"
-                src="${thumbnailUrl}"
+                src="https://img.youtube.com/vi/${encodeURIComponent(stream.videoId)}/hqdefault.jpg"
                 alt="${escapeHtml(stream.shortTitle)}"
               >
             </a>
+          `
+        : `
+            <div class="thumbnail-link">
+              <div class="stream-thumbnail-placeholder">
+                YouTube 連結待補
+              </div>
+            </div>
+          `;
+
+      const youtubeAction = hasVideo
+        ? `
+            <a
+              class="stream-link"
+              href="https://www.youtube.com/watch?v=${encodeURIComponent(stream.videoId)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              前往 YouTube
+            </a>
+          `
+        : `
+            <span class="stream-link disabled-link">
+              YouTube 連結待補
+            </span>
+          `;
+
+      return `
+        <article class="stream-card" data-stream-card="${escapeHtml(stream.id)}">
+          <div class="stream-main">
+            ${media}
 
             <div class="stream-info">
               <div class="stream-date">${formatDate(stream.date)}</div>
@@ -757,14 +814,7 @@
               </div>
 
               <div class="stream-actions">
-                <a
-                  class="stream-link"
-                  href="${youtubeUrl}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  前往 YouTube
-                </a>
+                ${youtubeAction}
 
                 <button
                   class="stream-toggle-button"
