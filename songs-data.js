@@ -4865,5 +4865,4 @@ window.SETSUNA_DATA.songs = [
         }
       ]
     }
-  ]
-};
+  ];
