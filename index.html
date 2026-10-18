@@ -415,34 +415,34 @@
     </section>
 
     <!-- MUSIC -->
-    <section class="section" id="music">
+<section class="section" id="music">
 
-      <div class="section-title">
-        <h2>Music</h2>
-        <p>正式音樂作品</p>
-      </div>
+  <div class="section-title">
+    <h2>Music</h2>
+    <p>正式音樂作品</p>
+  </div>
 
-      <div class="music-grid">
+  <div class="music-grid">
 
-        <div class="music-box">
-          <h3>Original Songs</h3>
-          <p>
-            整理剎那正式發布的原創歌曲。
-            後續可補充發表日期、作詞、作曲、MV 與相關演唱紀錄。
-          </p>
-        </div>
+    <a class="music-box" href="music.html">
+      <h3>Original Songs</h3>
 
-        <div class="music-box">
-          <h3>Covers</h3>
-          <p>
-            整理剎那正式發布的 Cover 作品，
-            後續可依年份、原唱與發布日期持續補充。
-          </p>
-        </div>
+      <p id="homeOriginalSummary">
+        正在讀取作品資料...
+      </p>
+    </a>
 
-      </div>
+    <a class="music-box" href="music.html">
+      <h3>Covers</h3>
 
-    </section>
+      <p id="homeCoverSummary">
+        正在讀取作品資料...
+      </p>
+    </a>
+
+  </div>
+
+</section>
 
     <!-- LATEST STREAMS -->
     <section class="section">
@@ -508,6 +508,7 @@
 
   <script src="streams-data.js"></script>
   <script src="songs-data.js"></script>
+  <script src="data/music-data.js"></script>
   
   <script>
     const data = window.SETSUNA_DATA || { streams: [], songs: [] };
@@ -570,7 +571,72 @@
         latestContainer.appendChild(card);
       });
     }
-  </script>
+
+    // =========================
+    // HOME MUSIC
+    // =========================
+
+    const musicData = Array.isArray(window.SETSUNA_MUSIC)
+      ? window.SETSUNA_MUSIC
+      : [];
+
+    const originalMusic = musicData
+      .filter(item => item.type === "original")
+      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate));
+
+      const coverMusic = musicData
+      .filter(item => item.type === "cover")
+      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate));
+
+
+    function formatMusicDate(date) {
+      return String(date || "").replaceAll("-", "／");
+    }
+
+
+    const originalSummary =
+      document.getElementById("homeOriginalSummary");
+
+    const coverSummary =
+      document.getElementById("homeCoverSummary");
+
+
+    if (originalMusic.length === 0) {
+
+      originalSummary.textContent =
+        "目前尚未收錄正式原創作品。";
+
+    } else {
+
+      const latestOriginal = originalMusic[0];
+
+      originalSummary.innerHTML = `
+        ${originalMusic.length} 首正式原創作品<br>
+        最新作品：${latestOriginal.title}
+        ｜${formatMusicDate(latestOriginal.releaseDate)}
+      `;
+
+    }
+
+
+    if (coverMusic.length === 0) {
+
+      coverSummary.textContent =
+        "目前尚未收錄正式 Cover 作品。";
+
+    } else {
+
+      const latestCover = coverMusic[0];
+
+      coverSummary.innerHTML = `
+        ${coverMusic.length} 首正式 Cover<br>
+        最新作品：${latestCover.title}
+        ｜${formatMusicDate(latestCover.releaseDate)}
+      `;
+
+    }
+    
+   </script>
 
 </body>
 </html>
