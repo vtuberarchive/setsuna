@@ -1,7 +1,6 @@
 window.SETSUNA_DATA = window.SETSUNA_DATA || {};
 
-window.SETSUNA_DATA = {
-  "streams": [
+window.SETSUNA_DATA.streams = [
     {
       "id": "20251108",
       "date": "2025-11-08",
