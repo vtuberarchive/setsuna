@@ -170,16 +170,6 @@
     }
 
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 12px;
-
-      margin-top: 30px;
-    }
-
-
 
     /* =========================================================
        BUTTON
@@ -389,13 +379,6 @@
     }
 
 
-    /*
-      大圖本體
-      沒有 translateY
-      沒有 box-shadow
-      所以不會像歌回卡片一樣浮起來
-    */
-
     .home-music-artwork {
       width: 100%;
 
@@ -434,11 +417,6 @@
         #000;
     }
 
-
-    /*
-      Original 還沒有作品時
-      顯示同尺寸 placeholder
-    */
 
     .home-music-empty {
       width: 100%;
@@ -481,10 +459,6 @@
         1.8;
     }
 
-
-    /*
-      縮圖下方文字
-    */
 
     .home-music-caption {
       margin-top:
@@ -887,31 +861,55 @@
 
     </p>
 
-
-    <div class="hero-actions">
-
-      <a
-        class="button secondary"
-        href="profile.html"
-      >
-        查看 PROFILE
-      </a>
-
-
-      <a
-        class="button secondary"
-        href="streams.html"
-      >
-        前往 STREAMS
-      </a>
-
-    </div>
-
   </section>
 
 
 
   <main>
+
+
+    <!-- =========================================================
+         LATEST STREAMS
+    ========================================================== -->
+
+    <section class="section">
+
+
+      <div class="section-title">
+
+        <h2>
+          Latest Singing Streams
+        </h2>
+
+        <p>
+          近期收錄歌回
+        </p>
+
+      </div>
+
+
+
+      <div
+        class="latest-grid"
+        id="latestStreams"
+      ></div>
+
+
+
+      <div class="stream-more">
+
+        <a
+          class="button secondary"
+          href="streams.html"
+        >
+          查看全部 STREAMS
+        </a>
+
+      </div>
+
+
+    </section>
+
 
 
     <!-- =========================================================
@@ -1057,50 +1055,6 @@
           href="music.html"
         >
           查看全部 MUSIC
-        </a>
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- =========================================================
-         LATEST STREAMS
-    ========================================================== -->
-
-    <section class="section">
-
-
-      <div class="section-title">
-
-        <h2>
-          Latest Singing Streams
-        </h2>
-
-        <p>
-          近期收錄歌回
-        </p>
-
-      </div>
-
-
-
-      <div
-        class="latest-grid"
-        id="latestStreams"
-      ></div>
-
-
-
-      <div class="stream-more">
-
-        <a
-          class="button secondary"
-          href="streams.html"
-        >
-          查看全部 STREAMS
         </a>
 
       </div>
