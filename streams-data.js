@@ -336,5 +336,19 @@ window.SETSUNA_DATA.streams = [
       "shortTitle": "輕柔的吉他與歌聲伴你入睡💤",
       "fullTitle": "〖 粿歌雜 〗輕柔的吉他與歌聲伴你入睡💤還在練習的哄睡直播😚💖",
       "videoId": "asm2U0E9HlE"
+    },
+    {
+      "id": "20261013",
+      "date": "2026-10-13",
+      "shortTitle": "純吉他彈唱 / 無 BGM 🎧",
+      "fullTitle": "純吉他彈唱 / 無 BGM 🎧 歡迎點歌🫰🏻測試新的斗內金流💰",
+      "videoId:" "0JzAs-_rruw"
+    },
+    {
+      "id": "20261016",
+      "date": "2026-10-16",
+      "shortTitle": "好久不見的烏克麗麗彈唱🎤",
+      "fullTitle": "好久不見的烏克麗麗彈唱🎤不同風格不同感受🎧",
+      "videoId": "u9kz1LbKF9Q"
     }
   ];
