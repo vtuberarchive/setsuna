@@ -342,7 +342,7 @@ window.SETSUNA_DATA.streams = [
       "date": "2026-10-13",
       "shortTitle": "純吉他彈唱 / 無 BGM 🎧",
       "fullTitle": "純吉他彈唱 / 無 BGM 🎧 歡迎點歌🫰🏻測試新的斗內金流💰",
-      "videoId:" "0JzAs-_rruw"
+      "videoId": "0JzAs-_rruw"
     },
     {
       "id": "20261016",
