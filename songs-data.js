@@ -4864,5 +4864,220 @@ window.SETSUNA_DATA.songs = [
           "time": "02:03:22"
         }
       ]
-    }
+    },
+    {
+    "song": "完全感覚Dreamer",
+    "original": "ONE OK ROCK",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "00:25:32"
+        }
+    ]
+},
+{
+    "song": "サムライハート",
+    "original": "SPYAIR",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "00:35:07"
+        }
+    ]
+},
+{
+    "song": "転がる岩、君に朝が降る",
+    "original": "ASIAN KUNG-FU GENERATION",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "00:44:00"
+        }
+    ]
+},
+{
+    "song": "妳是我的花朵",
+    "original": "伍佰",
+    "streamId": "20261013",
+    "note": "ft. 霸丸BAHWUAN",
+    "parts": [
+        {
+            "time": "00:52:53"
+        }
+    ]
+},
+{
+    "song": "六兆年と一夜物語",
+    "original": "kemu feat. IA",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "01:01:42"
+        }
+    ]
+},
+{
+    "song": "残酷な天使のテーゼ",
+    "original": "高橋洋子(𝗻𝘆𝗮)",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "01:17:14"
+        }
+    ]
+},
+{
+    "song": "星街の駅で",
+    "original": "tuki.",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "01:22:53"
+        }
+    ]
+},
+{
+    "song": "unravel",
+    "original": "TK from 凛として時雨",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "01:31:16"
+        }
+    ]
+},
+{
+    "song": "Kiss Me",
+    "original": "Sixpence None The Richer",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "01:37:47"
+        }
+    ]
+},
+{
+    "song": "六等星の夜",
+    "original": "Aimer",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "01:46:09"
+        }
+    ]
+},
+{
+    "song": "残響散歌",
+    "original": "Aimer",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "02:00:40"
+        }
+    ]
+},
+{
+    "song": "Anytime Anywhere",
+    "original": "milet",
+    "streamId": "20261013",
+    "parts": [
+        {
+            "time": "02:12:33"
+        }
+    ]
+},
+{
+    "song": "I'm Yours",
+    "original": "Jason Mraz",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "time": "00:15:33"
+        }
+    ]
+},
+{
+    "song": "テルーの唄",
+    "original": "手嶌葵",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "label": "P1",
+            "time": "00:27:47"
+        },
+        {
+            "label": "P2",
+            "time": "00:36:07"
+        }
+    ]
+},
+{
+    "song": "島唄",
+    "original": "夏川りみ",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "label": "P1",
+            "time": "00:46:54"
+        },
+        {
+            "label": "P2",
+            "time": "00:53:35"
+        },
+        {
+            "label": "P3",
+            "time": "01:48:21"
+        }
+    ]
+},
+{
+    "song": "Payphone",
+    "original": "Maroon 5 ft. Wiz Khalifa",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "label": "P1",
+            "time": "01:02:00"
+        },
+        {
+            "label": "P2",
+            "time": "01:09:05"
+        }
+    ]
+},
+{
+    "song": "Slow & Easy",
+    "original": "平井 大",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "label": "P1",
+            "time": "01:30:39"
+        },
+        {
+            "label": "P2",
+            "time": "01:36:23"
+        }
+    ]
+},
+{
+    "song": "晚餐歌",
+    "original": "tuki.",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "time": "01:57:06"
+        }
+    ]
+},
+{
+    "song": "Wherever you are",
+    "original": "ONE OK ROCK",
+    "streamId": "20261016",
+    "parts": [
+        {
+            "time": "02:11:24"
+        }
+    ]
+}
   ];
